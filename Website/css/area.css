@@ -1,0 +1,269 @@
+body{
+  background-color: #e68900;
+}
+canvas {
+display: block;
+width: 100%;
+height: 400px;
+max-width: 800px;
+margin: 0 auto;
+}
+
+.dashboard-section {
+margin-bottom: 40px;
+background: #FFFFFF; /* White background for sections */
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for card effect */
+}
+
+.chart-container {
+  width: 700px; /* Fixed width */
+  height: 600px; /* Fixed height */
+  margin: auto; /* Centers charts */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff; /* Optional: Background color */
+  border-radius: 10px; /* Optional: Rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Shadow */
+  margin-bottom: 1.5rem;
+}
+.filter-section{
+margin-top: 3rem;
+margin-bottom: 0%;
+}
+.countrychart{
+width: 900px;
+height: 550px;
+}
+/* sidebar styles  */
+body {
+display: flex;
+margin: 0;
+}
+
+.sidebar {
+width: 250px;
+height: 100vh;
+position: fixed;
+left: 0;
+top: 0;
+background-color: #333;
+color: white;
+padding: 20px;
+margin-top: 4rem;
+transition: transform 0.3s ease-in-out;
+}
+
+.sidebar.hidden {
+transform: translateX(-100%);
+}
+.sidebar-material{
+margin-top:5rem;
+left: 50px;
+}
+
+.dashboard-content {
+margin-left: 350px; /* This ensures the content starts after the sidebar */
+padding: 20px;
+transition: margin-left 0.3s ease-in-out;
+width: 980px;
+margin-top: 3rem;
+}
+.sidebar.hidden + .dashboard-content {
+margin-left: 0;
+}
+
+.toggle-btn {
+position: fixed;   /* Keep fixed outside sidebar */
+top: 20px;
+left: 30px;       /* Adjust based on sidebar width */
+background-color: #ff9800;
+color: white;
+margin-top: 4rem;
+border: none;
+padding: 10px 15px;
+cursor: pointer;
+font-size: 1.5rem;
+z-index: 1001;     /* Ensure button is above sidebar */
+}
+
+.toggle-btn:hover {
+background-color: #e68900;
+}
+.dashboard-content {
+flex: 1;
+padding: 20px;
+/* background: #ECF0F1;  */
+/* background: #fdf7e2; */
+}
+
+/* Dashboard Section Styling */
+.dashboard-section {
+/* background-color: #e68900; */
+margin-bottom: 40px;
+background: #fdf7e2;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for card effect */
+}
+.filter-section{
+margin-bottom: 1.5rem;
+}
+/* .areaDistribution-Chart{
+width: 500px;
+height: 500px;
+} */
+#areaDistributionChart{
+ width: 450px;
+height: 450px;
+}
+#areaUtilizationChart{
+ width: 450px;
+height: 450px;
+}
+.dashboard-section .Comparison-chart{
+background-color:#fff;
+}
+.dashboard-section .mapp{
+background-color:#fff;
+}
+.exitbtn {
+display: inline-block;
+margin-top: 18rem;
+  padding: 10px 20px;
+  background-color: #ff7f50; /* Citrus color */
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.exitbtn:hover {
+  /* background-color: #ff5722; */
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+}
+/* navbar  */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Arial, sans-serif;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #ff9901;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+  margin-bottom: 1rem;
+}
+
+nav .navbar {
+  height: 100%;
+  max-width: 1250px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin: auto; */
+  padding: 0 15px;
+}
+/* Reset styles */
+.links li {
+  list-style: none;
+  padding: 0 12px;
+}
+
+/* Remove default link styling */
+.nav-links ul {
+  display: flex;  
+  gap: 1px;
+}
+
+/* Button Styling */
+.nav-btn {
+  /* background: linear-gradient(135deg,   #068ee9, #ffcc00); */
+  background-color: 	#fa9004;
+  color: rgba(255, 255, 255, 0.911); 
+  font-size: 1.1rem;
+  margin-left: 0%;
+  margin-right: 0%;
+  /* margin: 0%; */
+  font-weight: 700;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  /* margin-right: 3rem; */
+}
+
+.nav-btn:hover {
+  background: linear-gradient(135deg, #ff6600, #ffaa00);
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav .navbar .logo {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-decoration: none;
+  left: 0%;
+  padding-right: 140px;
+  width: max-content;
+  white-space: nowrap;
+}
+nav .navbar .logo img {
+  width: 60px;  /* Adjust size as needed */
+  height: auto;
+  margin-right: 10px;
+  border-radius: 50%; /* Optional: makes the logo circular */
+}
+.links{
+  margin-left: 1rem;
+}
+/* Logout Button Styling */
+.logout-btn {
+  background: linear-gradient(135deg, #ff3b3b, #ff7b7b);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  margin: auto;
+  /* margin-left: 3rem; */
+  /* margin: auto; */
+  padding: 10px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  /* display: flex; */
+  align-items: center;
+  gap: 8px;
+}
+
+/* Hover effect */
+.logout-btn:hover {
+  background: linear-gradient(135deg, #e60000, #ff4d4d);
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+}
+
+/* Logout Icon */
+.logout-icon {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
