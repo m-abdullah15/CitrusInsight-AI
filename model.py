@@ -8,7 +8,7 @@ from tensorflow.keras.callbacks import EarlyStopping
 from sklearn.metrics import classification_report, accuracy_score
 import numpy as np
 
-# Parameters
+
 DATASET_PATH = "F:\\citrus_dataset"
 IMAGE_SIZE = (224, 224)
 BATCH_SIZE = 32
@@ -19,7 +19,7 @@ CLASS_NAMES = [
     "Spiny whitefly", "Yellow leaves"
 ]
 
-# Data Preprocessing
+
 data_gen = ImageDataGenerator(
     rescale=1.0/255.0,
     validation_split=0.2,
@@ -49,15 +49,15 @@ val_gen = data_gen.flow_from_directory(
     subset='validation'
 )
 
-# Load DenseNet121 base model with only 80 layers
+
 base_model = DenseNet121(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
 base_model = Model(inputs=base_model.input, outputs=base_model.layers[79].output)
 
-# Freeze the base model layers
+
 for layer in base_model.layers:
     layer.trainable = False
 
-# Add custom layers
+
 x = GlobalAveragePooling2D()(base_model.output)
 x = Dropout(0.5)(x)
 x = Dense(256, activation='relu')(x)
@@ -66,14 +66,14 @@ output = Dense(len(CLASS_NAMES), activation='softmax')(x)
 
 model = Model(inputs=base_model.input, outputs=output)
 
-# Compile the model
+
 optimizer = Adam(learning_rate=LEARNING_RATE)
 model.compile(optimizer=optimizer, loss='categorical_crossentropy', metrics=['accuracy'])
 
-# Callbacks
+
 early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
 
-# Train the model
+
 history = model.fit(
     train_gen,
     validation_data=val_gen,
@@ -81,15 +81,15 @@ history = model.fit(
     callbacks=[early_stopping]
 )
 
-# Unfreeze all layers for fine-tuning
+
 for layer in base_model.layers:
     layer.trainable = True
 
-# Recompile the model with a lower learning rate
+
 optimizer = Adam(learning_rate=LEARNING_RATE / 10)
 model.compile(optimizer=optimizer, loss='categorical_crossentropy', metrics=['accuracy'])
 
-# Fine-tune the model
+
 history_fine_tune = model.fit(
     train_gen,
     validation_data=val_gen,
@@ -97,7 +97,7 @@ history_fine_tune = model.fit(
     callbacks=[early_stopping]
 )
 
-# Evaluate the model
+
 val_gen.reset()
 y_true = val_gen.classes
 y_pred = model.predict(val_gen)
