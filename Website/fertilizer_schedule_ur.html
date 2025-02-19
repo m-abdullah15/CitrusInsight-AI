@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ترشاوہ باغات کے لئے کھادوں کی سفارشات</title>
+    <link rel="stylesheet" href="../Website/css/fertilizer_schedule.css">
+</head>
+<body>
+       <!-- navbar  -->
+    <nav>
+      <div class="navbar">
+        <a href="#" class="logo">
+          <img src="./assets/logo.png" alt="Citrus Insight AI Logo" />
+          CitrusInsight AI
+        </a>
+        <div class="nav-links">
+          <ul class="links">
+            <a href="./recommendation.html">
+              <li><button class="nav-btn">Recommendation System</button></li>
+            </a>
+            <a href="./disease_detection.html"
+              ><li><button class="nav-btn">Disease Detection</button></li></a
+            ><a href="./dashboard.php"><li><button class="nav-btn">Trade Dashboard</button></li></a>
+            <a href="./yearly_planner_en.html">
+              <li><button class="nav-btn">Yearly Planner</button></li>
+            </a>
+            <a href="./fertilizer_schedule_en.html"
+              ><li><button class="nav-btn">Fertilizers Schedule</button></li></a
+            >
+            <a href="./index.php"
+              ><li>
+                <button class="logout-btn">
+                  <svg
+                    class="logout-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 15L15 12L10 9"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M15 12H3"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M20 4V20"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Logout
+                </button>
+              </li>
+            </a>
+          </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="section">
+   <!-- Header Section -->
+    <div class="header">
+        <h1>ترشاوہ باغات کے لئے کھادوں کی سفارشات</h1>
+               <div class="toggle-container">
+          <span id="toggle-label">Switch Into English</span>
+          <label class="switch">
+            <input type="checkbox" id="pageToggle" />
+            <span class="slider"></span>
+          </label>
+        </div>
+    </div>
+
+    <!-- Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>ڈالنے کے اوقات کار</th>
+                <th>مقدار فی پودا</th>
+                <th>کھادیں (مقدار فی ایکڑ)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>دسمبر/ جنوری</td>
+                <td>3 کلو گرام سنگل سپر فاسفیٹ + 1 کلو گرام سلفیٹ آف پوٹاش</td>
+                <td>6 بوری سنگل سپر فاسفیٹ + 2 بوری سلفیٹ آف پوٹاش</td>
+            </tr>
+            <tr>
+                <td>وسط فروری</td>
+                <td>1.5 کلو گرام امونیم نائٹریٹ/امونیم سلفیٹ</td>
+                <td>3 بوری امونیم نائٹریٹ یا امونیم سلفیٹ یا 1.5 بوری یوریا</td>
+            </tr>
+            <tr>
+                <td>وسط اپریل</td>
+                <td>1.5 کلو گرام امونیم نائٹریٹ/امونیم سلفیٹ</td> 
+                <td>3 بوری امونیم نائٹریٹ یا امونیم سلفیٹ یا 1.5 بوری یوریا</td>
+            </tr>
+            <tr>
+                <td>اگست تا ستمبر</td>
+                <td>1.5 کلو گرام امونیم نائٹریٹ/امونیم سلفیٹ</td>  
+                <td>3 بوری امونیم نائٹریٹ یا امونیم سلفیٹ یا 1.5 بوری یوریا</td>
+            </tr>
+            <!--Table 2 -->
+            <tr>
+                <th colspan="3">یا</th>
+            </tr>
+            <tr>
+                <td>وسط فروری سے آخری ہفتہ</td>
+              <td>1 کلو گرام ڈی اے پی + 1 کلو گرام سلفیٹ آف پوٹاش</td>
+               <td>2 بوری ڈی اے پی + 2 بوری سلفیٹ آف پوٹاش</td>
+            </tr>
+            <tr>
+                <td>اپریل کے آخر تا اوائل مئی</td>
+                <td>1.5 کلوگرام امونیم نائٹریٹ/سلفیٹ یا 0.75 کلوگرام یوریا</td>
+                <td>3 بوری امونیم نائٹریٹ یا امونیم سلفیٹ یا 1.5 بوری یوریا</td>
+            </tr>
+            <tr>
+                <td>اگست تا ستمبر</td>
+               <td>1.5 کلوگرام امونیم نائٹریٹ/سلفیٹ یا 0.75 کلوگرام یوریا</td>
+                <td>3 بوری امونیم نائٹریٹ یا امونیم سلفیٹ یا 1.5 بوری یوریا</td>
+            </tr>
+
+             <!--Table 3 -->
+             <tr>
+                <th colspan="3">یا</th>
+            </tr>
+            <tr>
+                <td>وسط فروری سے آخری ہفتہ</td>
+                <td>1.5 کلوگرام نائٹروفاس + 1 کلوگرام سلفیٹ آف پوٹاش</td>
+                <td>3 بوری نائٹروفاس + 2 بوری سلفیٹ آف پوٹاش</td>
+            </tr>
+            <tr>
+                <td>اپریل کے آخر تا اوائل مئی</td>
+                <td>1.5 کلوگرام امونیم نائٹریٹ/سلفیٹ یا 0.75 کلوگرام یوریا</td>
+                <td>3 بوری امونیم نائٹریٹ یا امونیم سلفیٹ یا 1.5 بوری یوریا</td>
+            </tr>
+            <tr>
+                <td>وسط فروری سے آخری ہفتہ</td>
+                <td>1 کلوگرام نائٹروفاس + 1 کلوگرام امونیم نائٹریٹ/سلفیٹ </td>
+                <td>2 بوری نائٹروفاس + 2 بوری امونیم نائٹریٹ/سلفیٹ </td>
+            </tr>
+
+            <!--Table 4 -->
+            <tr>
+                <th colspan="3">یا</th>
+            </tr>
+            <tr>
+                <td>وسط فروری سے آخری ہفتہ</td>
+                <td>1.5 کلوگرام این پی کے</td>
+                <td>3 بوری این پی کے (NPK)</td>
+            </tr>
+            <tr>
+                <td>اپریل کے آخر تا اوائل مئی</td>
+                <td>1.5 کلوگرام امونیم نائٹریٹ/سلفیٹ یا 0.75 کلوگرام یوریا</td>
+                <td>3 بوری امونیم نائٹریٹ یا امونیم سلفیٹ یا 1.5 بوری یوریا</td>
+            </tr>
+            <tr>
+                <td>اگست تا ستمبر</td>
+                <td>1 کلوگرام امونیم نائٹریٹ/سلفیٹ + 1 کلوگرام  این پی کے</td>
+                <td>2 بوری این پی کے + 2 بوری امونیم نائٹریٹ یا امونیم سلفیٹ</td>
+            </tr>
+        </tbody>
+    </table>
+
+<!--                           Space                           -->
+
+
+
+
+
+
+    <!-- Table -->
+    <div class="table-title">گوشوارہ نمبر :1 بلحاظ عمر ترشاوہ باغات کے لیے کھادوں کی مقدار (گرام فی پودا)</div>
+    <table>
+        <thead>
+            <tr>
+                <th>پودے کی عمر</th>
+                <th colspan="3">غذائی اجزاء کی ضرورت بلحاظ عمر (گرام فی پودا)  </th>
+                <th colspan="5">بلحاظ ضرورت مختلف کیمیائی کھادوں کی مقدار (گرام کی پودا)</th>
+                <th>-</th>
+                
+
+            </tr>
+            <tr>
+                <th rowspan="2">-</th>
+                <th rowspan="2">نائٹروجن </th>
+                <th rowspan="2">فاسفورس</th>
+                <th rowspan="2">پوٹاش</th>
+                <th colspan="2">نائٹروجن </th>
+                <th colspan="2">فاسفورس</th>
+                <th>پوٹاش</th>
+                <th rowspan="2">گوبر کی کھاد (گرام فی پودا) </th>
+            </tr>
+            <tr>
+                <th colspan="2">یوریا یا امونیم نائٹریٹ</th>
+                <th colspan="2">ٹرپل سپر فاسفیٹ یا سنگل سپر فاسفیٹ</th>
+                <th>سیلفیٹ آف پوٹاش </th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>2 سال</th>
+                <td>200</td>
+                <td>100</td>
+                <td>100</td>
+                <td>430</td>
+                <td>770</td>
+                <td>217</td>
+                <td>550</td>
+                <td>200</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <th>3 سال</th>
+                <td>300</td>
+                <td>150</td>
+                <td>150</td>
+                <td>650</td>
+                <td>1154</td>
+                <td>325</td>
+                <td>830</td>
+                <td>300</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <th>4 سال</th>
+                <td>400</td>
+                <td>200</td>
+                <td>200</td>
+                <td>870</td>
+                <td>1538</td>
+                <td>435</td>
+                <td>1110</td>
+                <td>400</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <th>5 سال</th>
+                <td>500</td>
+                <td>250</td>
+                <td>250</td>
+                <td>1086</td>
+                <td>1923</td>
+                <td>540</td>
+                <td>1390</td>
+                <td>500</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <th>6 سال</th>
+                <td>600</td>
+                <td>300</td>
+                <td>300</td>
+                <td>1304</td>
+                <td>2300</td>
+                <td>650</td>
+                <td>1670</td>
+                <td>600</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <th>7 سال</th>
+                <td>700</td>
+                <td>350</td>
+                <td>350</td>
+                <td>1521</td>
+                <td>2692</td>
+                <td>760</td>
+                <td>1940</td>
+                <td>700</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <th>8 سال</th>
+                <td>800</td>
+                <td>400</td>
+                <td>400</td>
+                <td>1739</td>
+                <td>3076</td>
+                <td>876</td>
+                <td>2220</td>
+                <td>800</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <th>9 سال</th>
+                <td>900</td>
+                <td>450</td>
+                <td>450</td>
+                <td>1956</td>
+                <td>3460</td>
+                <td>980</td>
+                <td>2500</td>
+                <td>900</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <th>10 سال اور زائد</th>
+                <td>1000</td>
+                <td>500</td>
+                <td>500</td>
+                <td>2173</td>
+                <td>3846</td>
+                <td>1090</td>
+                <td>2780</td>
+                <td>1000</td>
+                <td>60</td>
+            </tr>
+            
+            
+        </tbody>
+    </table>
+
+
+
+    
+<!--                           Space                           -->
+
+
+
+
+
+
+    <!-- Table -->
+    <div class="table-title">گوشوارہ نمبر 2:     غذائی عناصر کی مقدار اور ڈالنے کا وقت برائے کنو اور مالٹا بذریہ ڈرپ آبپاشی</div>
+    <table>
+        <thead>
+            <tr>
+                <th>ڈالنے کے اوقات کار</th>
+                <th colspan="3">غذائی عناصر</th>
+            </tr>
+            <tr>
+                <th>-</th>
+                <th>پوٹاش</th>
+                <th>فاسفورس</th>
+                <th>نائٹروجن</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>دسمبر سے جنوری</th>
+                <td>15%</td>
+                <td>20%</td>
+                <td>5%</td>
+            </tr>
+            <tr>
+                <th>فروری سے مئی</th>
+                <td>55%</td>
+                <td>60%</td>
+                <td>60%</td>
+            </tr>
+            <tr>
+                <th>جون سے جولائی</th>
+                <td>10%</td>
+                <td>5%</td>
+                <td>10%</td>
+            </tr>
+            <tr>
+                <th>اگست سے اکتوبر</th>
+                <td>10%</td>
+                <td>15%</td>
+                <td>20%</td>
+            </tr>
+            <tr>
+                <th>نومبر</th>
+                <td>10%</td>
+                <td>-</td>
+                <td>5%</td>
+            </tr>
+           
+            
+        </tbody>
+    </table>
+
+
+
+
+    <!--                           Space                           -->
+
+
+
+
+
+
+    <!-- Table -->
+    <div class="table-title">عناصر صغیرہ کی مقدار کا شیڈول فی پودا</div>
+    <table>
+        <thead>
+            <tr>
+                <th>عناصر صغیرہ</th>          
+                <th>زمین میں ڈالنے کے لیے </th>
+                <th>سپرے کے لیے مقدار گرام فی 100 لیٹر پانی</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>کاپر سلفیٹ ٪25</td>
+                <td> 50 گرام کاپر یا 200 گرام کاپر سلفیٹ</td>
+                <td> 200 گرام کاپر سلفیٹ</td>
+            </tr>
+            <tr>
+                <td>میگا نیز سلفیٹ ٪32</td>
+                <td> 100 گرام میگانیز یا 312 گرام میگانیز سلفیٹ</td>
+                <td> 200 گرام میگانیز سلفیٹ</td>
+            </tr>
+            <tr>
+                <td>فیرس سلفیٹ ٪19</td>
+                <td> 100 گرام فیرس یا 526 گرام فیرس سلفیٹ</td>
+                <td> 200 گرام فیرس سلفیٹ</td>
+            </tr>
+            <tr>
+                <td>بوریکس ٪11</td>
+                <td> 15 گرام بوران یا 136 گرام بوریکس</td>
+                <td> 30 گرام بوریکس</td>
+            </tr>
+            <tr>
+                <td>زنک سلفیٹ ٪25</td>
+                <td> 50 گرام زنک یا 217 گرام زنک سلفیٹ</td>
+                <td> 240 گرام زنک سلفیٹ</td>
+            </tr>
+           
+            
+        </tbody>
+    </table>
+
+
+
+
+    <!-- Note Section -->
+    <div class="note">
+        <p>یہ سفارشات سائنسی تحقیق پر مبنی ہیں۔ زمین کی نوعیت اور پانی کی دستیابی کے مطابق ان پر عمل کریں۔</p>
+    </div>
+</div>
+ 
+        <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleSwitch = document.getElementById("pageToggle");
+        const toggleLabel = document.getElementById("toggle-label");
+
+        // Check last selected page
+        if (localStorage.getItem("selectedPage") === "Switch into English") {
+          toggleSwitch.checked = true;
+          toggleLabel.textContent = "Switch into English";
+        }
+
+        // Toggle action
+        toggleSwitch.addEventListener("change", function () {
+          if (this.checked) {
+            toggleLabel.textContent = "Switch into English";
+            localStorage.setItem("selectedPage", "Switch into English");
+            window.location.href = "fertilizer_schedule_en.html"; // 🔹 Replace with your second page link
+          } else {
+            toggleLabel.textContent = "Switch into Urdu";
+            localStorage.setItem("selectedPage", "Switch into Urdu");
+            window.location.href = "fertilizer_schedule_ur.html"; // 🔹 Replace with your first page link
+          }
+        });
+      });
+    </script>
+</body>
+</html>
