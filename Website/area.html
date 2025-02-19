@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dashboards</title>
+  <link rel="stylesheet" href="../Website/css/area.css">
+	<link rel="stylesheet" href="../Website/css/progress.css">
+  <!-- leaflet.js for Interactive map -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+ <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Production Areas Charts
+  // new Chart(document.getElementById("areaDistributionChart"), {
+  //   type: "pie",
+  //   data: {
+  //     labels: ["Punjab", "Sindh", "Balochistan", "KPK"],
+  //     datasets: [
+  //       {
+  //         label: "Area Distribution (%)",
+  //         data: [90, 30, 20, 10],
+  //         backgroundColor: ["#27AE60", "#F39C12", "#F1C40F", "#2C3E50"],
+  //       },
+  //     ],
+  //   },
+  // });
+        // Register the plugin
+        Chart.register(ChartDataLabels);
+
+        new Chart(document.getElementById("areaDistributionChart"), {
+    type: "pie",
+    data: {
+        labels: ["Punjab", "Sindh", "Balochistan", "KPK"],
+        datasets: [
+            {
+                label: "Area Distribution (%)",
+                data: [85,7,5,3],
+                backgroundColor: ["#27AE60", "#F39C12", "#F1C40F", "#2C3E50"],
+            },
+        ],
+    },
+    options: {
+        responsive: true, // Makes it responsive
+        maintainAspectRatio: false, // Allows manual control of size
+        plugins: {
+            datalabels: {
+                color: "#fff",
+                font: {
+                    weight: "bold",
+                    size: 14,
+                },
+                formatter: (value, ctx) => {
+                    let total = ctx.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                    let percentage = ((value / total) * 100).toFixed(1) + "%";
+                    return percentage;
+                },
+            },
+        },
+    },
+});
+
+  // new Chart(document.getElementById("areaUtilizationChart"), {
+  //   type: "doughnut",
+  //   data: {
+  //     labels: ["Cultivated", "Uncultivated"],
+  //     datasets: [
+  //       {
+  //         label: "Land Utilization (%)",
+  //         data: [70, 30],
+  //         backgroundColor: ["#27AE60", "#F39C12"],
+  //       },
+  //     ],
+  //   },
+  // });
+          // Register the Data Labels plugin
+        Chart.register(ChartDataLabels);
+        new Chart(document.getElementById("areaUtilizationChart"), {
+            type: "doughnut",
+            data: {
+                labels: ["Cultivated", "Uncultivated"],
+                datasets: [
+                    {
+                        label: "Land Utilization (%)",
+                        data: [70, 30],
+                        backgroundColor: ["#27AE60", "#F39C12"],
+                    },
+                ],
+            },
+            options: {
+                responsive: true,  // ✅ Ensures responsiveness
+                maintainAspectRatio: false, // ✅ Allows manual control of size
+                plugins: {
+                    datalabels: {
+                        color: "#fff",
+                        font: {
+                            weight: "bold",
+                            size: 14,
+                        },
+                        formatter: (value, ctx) => {
+                            let total = ctx.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                            let percentage = ((value / total) * 100).toFixed(1) + "%";
+                            return percentage;
+                        },
+                    },
+                },
+            },
+        });
+        // Comparison of citrus insight ai 
+               // Register Data Labels Plugin
+        Chart.register(ChartDataLabels);
+
+        new Chart(document.getElementById("areaChart"), {
+            type: "bar",
+            data: {
+                labels: ["Punjab", "Sindh", "Balochistan", "KPK"],
+                datasets: [
+                    {
+                        label: "Citrus Area (in hectares)",
+                        data: [120000, 80000, 50000, 70000],
+                        backgroundColor: "#27AE60",
+                        borderColor: "#145A32",
+                        borderWidth: 2,
+                        borderRadius: 5,
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: false,  // ✅ Prevents movement
+                layout: {
+                    padding: {
+                        left: 0,
+                        right: 0,
+                        top: 10,
+                        bottom: 10,
+                    },
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: "top",
+                    },
+                    datalabels: {
+                        anchor: "end",
+                        align: "top",
+                        color: "#000",
+                        font: { size: 14, weight: "bold" },
+                        formatter: (value) => value.toLocaleString() + " ha",
+                    },
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: "Regions",
+                        },
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: "Area (in hectares)",
+                        },
+                        beginAtZero: true,
+                    },
+                },
+            },
+        });
+
+
+ })
+      // sidebar 
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("toggleBtn");
+    const sidebar = document.getElementById("sidebar");
+    const mainContent = document.getElementById("mainContent");
+
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("hidden");
+      mainContent.classList.toggle("full-width");
+    });
+  });
+  // Smooth Scroll Functionality
+document.querySelectorAll(".sidebar a").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    // event.preventDefault();
+    const targetId = event.target.getAttribute("href").substring(1);
+    const targetSection = document.getElementById(targetId);
+    targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
+
+// Active Section Highlight
+window.addEventListener("scroll", () => {
+  const sections = document.querySelectorAll(".dashboard-section");
+  const sidebarLinks = document.querySelectorAll(".sidebar a");
+
+  sections.forEach((section, index) => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
+      sidebarLinks.forEach((link) => link.classList.remove("active"));
+      sidebarLinks[index].classList.add("active");
+    }
+  });
+});
+ </script>
+</head>
+<body>
+  <!-- navbar  -->
+  <nav>
+    <div class="navbar">
+      <div class="nav-links">
+        <ul class="links">
+              <a href="#" class="logo">
+                  <img src="./assets/logo.png" alt="Citrus Insight AI Logo">
+                  CitrusInsight AI
+              </a>
+                <a href="./recommendation.html">
+                  <li><button class="nav-btn">Recommendation System</button></li>
+                </a>
+                <a href="./disease_detection.html"><li><button class="nav-btn">Disease Detection</button></li></a>
+                <a href="./dashboard.php"><li><button class="nav-btn">Trade Dashboard</button></li></a>
+                <a href="./yearly_planner_en.html">
+                <li><button class="nav-btn">Yearly Planner</button></li>
+                </a>
+                <a href="./fertilizer_schedule_en.html"><li><button class="nav-btn">Fertilizers Schedule</button></li></a> 
+                <a href="./index.php"><li>
+      <button class="logout-btn">
+          <svg class="logout-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 15L15 12L10 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M15 12H3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 4V20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Logout
+      </button>
+  </li>
+  
+                </a>
+              </ul>
+          </div>
+        </div>
+      </nav>
+  <!-- navbar  -->
+	<div class="dashboard-page">
+  <!-- Sidebar -->
+      <!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-material">
+    <a href="./dashboard.php"><h2>Citrus Dashboard</h2></a>
+  <ul>
+    <li><a href="import-export.html" class="nav-link">Import-Export Data</a></li>
+    <li><a href="area.html" class="nav-link">Production Areas</a></li>
+    <li><a href="production.html" class="nav-link">Citrus Production</a></li>
+    <li><a href="index.php" class="nav-link exitbtn">⬅ Back to Home</a></li>
+  </ul>
+</div> 
+</div>
+
+<!-- Toggle Button Outside Sidebar -->
+<button id="toggleBtn" class="toggle-btn">☰</button>
+  
+  <!-- Main Content -->
+  <div class="dashboard-content areacontent">
+  <!-- Section: Production Areas -->
+  <section id="production-areas" class="dashboard-section">
+    <h2>Areas of Citrus Production in Pakistan</h2>
+    <p>
+      Detailed insights into regions dedicated to citrus farming across Pakistan.
+    </p>
+    <!-- filters -->
+     <div class="filter-section region">
+  <label for="region-filter">Region:</label>
+  <select id="region-filter">
+    <option value="all">All Regions</option>
+    <option value="punjab">Punjab</option>
+    <option value="sindh">Sindh</option>
+    <option value="balochistan">Balochistan</option>
+    <option value="kpk">KPK</option>
+  </select>
+</div>
+    <div class="chart-container areaDistribution-Chart">
+      <!-- Chart 1: Area Distribution -->
+      <canvas id="areaDistributionChart"></canvas>
+    </div>
+    <div class="chart-container areaUtilization-Chart">
+      <!-- Chart 2: Yearly Area Utilization -->
+      <canvas id="areaUtilizationChart"></canvas>
+    </div>
+    <!-- Area charts  -->
+     <div class="dashboard-section mapp">
+      <h2>Region-Wise Citrus Production Areas</h2>
+      <div id="map" class="chart-container"></div> <!-- Map will render here -->
+    </div>
+    
+    <div class="dashboard-section Comparison-chart">
+      <h2>Comparison of Citrus Production Areas</h2>
+          <div id="chart-container" class="area-chart">
+          <canvas id="areaChart"></canvas>
+      </div>
+    </div>
+  </section>
+  </div>
+</div>
+
+
+<script src="../Website/js/progress.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="../Website/js/area.js"></script>
+
+</body>
+</html>
