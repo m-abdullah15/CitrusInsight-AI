@@ -18,7 +18,6 @@ CLASS_NAMES = [
     "Spiny whitefly", "Yellow leaves"
 ]
 
-
 data_gen = ImageDataGenerator(
     rescale=1.0/255.0,
     validation_split=0.2,
