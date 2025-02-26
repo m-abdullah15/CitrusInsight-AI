@@ -8,7 +8,7 @@
 
 </head>
 <body>
-      <!-- navbar  -->
+ 
 <nav>
     <div class="navbar">
       <div class="nav-links">
@@ -42,7 +42,7 @@
           </div>
         </div>
       </nav>
-      <!-- navbar  -->
+ 
     <div class="container">
         <h2>🍊 Citrus Disease Detection</h2>
       
@@ -55,7 +55,7 @@
             <input type="file" id="imageInput" accept="image/*">
             <button id="predictButton">🔍 Predict</button>
         </div>
-        <!-- 🔄 Loading Spinner -->
+       
         <div class="loader" id="loader"></div>
 
         <h3 class="result"><span id="result"></span></h3>
@@ -63,7 +63,7 @@
     </div>
 
     <script>
-        // 📸 Image Preview Function
+
         function previewImage() {
         const fileInput = document.getElementById("imageInput");
         const preview = document.getElementById("imagePreview");
@@ -82,7 +82,7 @@
         }
 
 
-        // 🔍 Predict Disease Function
+    
         async function predictDisease() {
             const fileInput = document.getElementById("imageInput");
             const resultText = document.getElementById("result");
@@ -94,7 +94,7 @@
                 return;
             }
 
-            // Show loading animation
+            
             resultText.innerText = "";
             confidenceText.innerText = "";
             loader.style.display = "block";
@@ -104,20 +104,20 @@
 
             reader.onload = async function () {
                 try {
-                    // Import the Client module dynamically
+                    
                     const { Client } = await import("https://esm.sh/@gradio/client");
 
-                    // Replace with your Hugging Face Space API URL
+                    
                     const client = await Client.connect("https://abdjutt777-citrus-demo.hf.space/");
                     const result = await client.predict("/predict", { image: file });
 
                     console.log("API Response:", result.data);
                     
-                    const predictedClass = result.data[0];      // Get class name
-                    const Confidence = parseFloat(result.data[1]);     // Get confidence score
+                    const predictedClass = result.data[0];      
+                    const Confidence = parseFloat(result.data[1]);    
                     console.log("predictedclass:",predictedClass);
                     console.log("Confidence:",Confidence);
-                   // Hide loader and display results
+                   
                     loader.style.display = "none";
                     resultText.innerHTML = `✅Disease: ${predictedClass}`;
                     confidenceText.innerHTML = `📊Confidence: ${Confidence}%`;
@@ -133,7 +133,7 @@
             reader.readAsArrayBuffer(file);
         }
 
-        // 🛠 Attach event listeners dynamically (No inline event handlers!)
+       
         document.getElementById("imageInput").addEventListener("change", previewImage);
         document.getElementById("predictButton").addEventListener("click", predictDisease);
     </script>
