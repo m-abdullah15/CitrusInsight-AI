@@ -84,6 +84,10 @@ history = model.fit(
 for layer in base_model.layers:
     layer.trainable = True
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> bd6838ac5cc9cf3d9185349b87c45ee31c40349b
 optimizer = Adam(learning_rate=LEARNING_RATE / 10)
 model.compile(optimizer=optimizer, loss='categorical_crossentropy', metrics=['accuracy'])
 
