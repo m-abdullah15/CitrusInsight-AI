@@ -11,10 +11,11 @@ if(isset($_POST['signin'])){
     $row_count = mysqli_num_rows($result);
     $row_data = mysqli_fetch_assoc($result);
     $pass = $row_data['password'];
+    $name = $row_data['name'];
 
     if($row_count > 0){
         if($password == $pass){ 
-            echo "<script>alert('Login SuccessFull')</script>";
+            echo "<script>alert('Welcome, " . addslashes($name) . "');</script>";
             echo "<script>window.open('disease_detection.html','_self')</script>";
         } else {
             echo "<script>alert('Incorrect Password or username')</script>";
