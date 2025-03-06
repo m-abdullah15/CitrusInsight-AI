@@ -6,6 +6,7 @@ $errorMessage = '';
 $successMessage = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
+    $name = $_POST['name'] ?? '';
     $username = $_POST['username'] ?? '';
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
@@ -17,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
     } else {
         
         // Insert into database
-        $query = "INSERT INTO `userdata` (username, email, password) VALUES ('$username', '$email', '$password')";
+        $query = "INSERT INTO `userdata` ( name , username, email, password) VALUES ('$name','$username', '$email', '$password')";
         if (mysqli_query($conn, $query)) {
             $successMessage = 'Sign up successful!';
             echo "<script>alert('$successMessage');</script>";
@@ -79,6 +80,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
                         <?php if ($errorMessage) { echo "<p style='color: red;'>$errorMessage</p>"; } ?>
 
                         <form method="POST" action="signup.php">
+                            <div class="input-group">
+                                <i class="bx bxs-user"></i>
+                                <input type="text" name="name" placeholder="Name" required />
+                            </div>
                             <div class="input-group">
                                 <i class="bx bxs-user"></i>
                                 <input type="text" name="username" placeholder="Username" required />
