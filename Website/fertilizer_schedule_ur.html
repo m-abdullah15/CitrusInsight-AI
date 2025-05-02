@@ -444,29 +444,36 @@
     </div>
 </div>
  
-        <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const toggleSwitch = document.getElementById("pageToggle");
-        const toggleLabel = document.getElementById("toggle-label");
-
-        // Check last selected page
-        if (localStorage.getItem("selectedPage") === "Switch into English") {
-          toggleSwitch.checked = true;
+<script> 
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleSwitch = document.getElementById("pageToggle");
+      const toggleLabel = document.getElementById("toggle-label");
+    
+      // Set toggle state based on localStorage
+      const selectedPage = localStorage.getItem("selectedPage");
+      if (selectedPage === "english") {
+        toggleSwitch.checked = true;
+        toggleLabel.textContent = "Switch into Urdu";
+      } else {
+        toggleSwitch.checked = false;
+        toggleLabel.textContent = "Switch into English";
+      }
+    
+      // Toggle action
+      toggleSwitch.addEventListener("change", function () {
+        if (this.checked) {
+          // Switch to English
+          toggleLabel.textContent = "Switch into Urdu";
+          localStorage.setItem("selectedPage", "english");
+          window.location.href = "fertilizer_schedule_en.html";
+        } else {
+          // Switch to Urdu
           toggleLabel.textContent = "Switch into English";
+          localStorage.setItem("selectedPage", "urdu");
+          window.location.href = "fertilizer_schedule_ur.html";
         }
-
-        // Toggle action
-        toggleSwitch.addEventListener("change", function () {
-          if (this.checked) {
-            toggleLabel.textContent = "Switch into English";
-            localStorage.setItem("selectedPage", "Switch into English");
-            window.location.href = "fertilizer_schedule_en.html"; // 
-            toggleLabel.textContent = "Switch into Urdu";
-            localStorage.setItem("selectedPage", "Switch into Urdu");
-            window.location.href = "fertilizer_schedule_ur.html"; 
-          }
-        });
       });
+    });
     </script>
 </body>
 </html>
