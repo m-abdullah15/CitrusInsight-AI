@@ -6,96 +6,6 @@
     <title>Dashboards</title>
     <link rel="stylesheet" href="./css/import.css" />
     <link rel="stylesheet" href="../Website/css/progress.css" />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // Import/Export Charts
-// Export graph
-        new Chart(document.getElementById("exportTrendsChart"), {
-          type: "bar",
-          data: {
-            labels: ["2019", "2020", "2021", "2022", "2023"],
-            datasets: [
-              {
-                label: "Exports (in Million $)",
-                data: [160, 205, 171, 118, 78],
-                backgroundColor: "#27AE60",
-              },
-            ],
-          },
-        });
-// import graph 
-        new Chart(document.getElementById("importTrendsChart"), {
-          type: "bar",
-          data: {
-            labels: ["2019", "2020", "2021", "2022", "2023"],
-            datasets: [
-              {
-                label: "Imports (in Million $)",
-                data: [411, 1612, 20, 12, 18],
-                // label : "Million $",
-                backgroundColor: "#F39C12",
-              },
-            ],
-          },
-        });
-
-        new Chart(document.getElementById("exportImportComparisonChart"), {
-          type: "line",
-          data: {
-            labels: ["2019", "2020", "2021", "2022", "2023"],
-            datasets: [
-              {
-                label: "Exports (in Million $)",
-                data: [160, 205, 171, 118, 78],
-                borderColor: "#27AE60",
-                fill: false,
-              },
-              {
-                label: "Imports (in Million $)",
-                data: [411, 1612, 20, 12, 18],
-                borderColor: "#F39C12",
-                fill: false,
-              },
-            ],
-          },
-        });
-      });
-
-      // sidebar 
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggleBtn = document.getElementById("toggleBtn");
-    const sidebar = document.getElementById("sidebar");
-    const mainContent = document.getElementById("mainContent");
-
-    toggleBtn.addEventListener("click", () => {
-      sidebar.classList.toggle("hidden");
-      mainContent.classList.toggle("full-width");
-    });
-  });
-  // Smooth Scroll Functionality
-document.querySelectorAll(".sidebar a").forEach((link) => {
-  link.addEventListener("click", (event) => {
-    // event.preventDefault();
-    const targetId = event.target.getAttribute("href").substring(1);
-    const targetSection = document.getElementById(targetId);
-    targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-});
-
-// Active Section Highlight
-window.addEventListener("scroll", () => {
-  const sections = document.querySelectorAll(".dashboard-section");
-  const sidebarLinks = document.querySelectorAll(".sidebar a");
-
-  sections.forEach((section, index) => {
-    const rect = section.getBoundingClientRect();
-    if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
-      sidebarLinks.forEach((link) => link.classList.remove("active"));
-      sidebarLinks[index].classList.add("active");
-    }
-  });
-});
-    </script>
 
   </head>
   <body>
@@ -108,10 +18,10 @@ window.addEventListener("scroll", () => {
                   <img src="./assets/logo.png" alt="Citrus Insight AI Logo">
                   CitrusInsight AI
               </a>
-                <a href="./recommendation.html">
+                <a href="./recommendation_system.html">
                   <li><button class="nav-btn">Recommendation System</button></li>
                 </a>
-                <a href="./disease_detection.html"><li><button class="nav-btn">Disease Detection</button></li></a>
+                <a href="./disease_detection.php"><li><button class="nav-btn">Disease Detection</button></li></a>
                 <a href="./dashboard.php"><li><button class="nav-btn">Trade Dashboard</button></li></a>
                 <a href="./yearly_planner_en.html">
                 <li><button class="nav-btn">Yearly Planner</button></li>
