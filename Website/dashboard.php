@@ -6,21 +6,6 @@
 	<title>Dashboards</title>
   <link rel="stylesheet" href="../Website/css/dashboard.css">
 	<link rel="stylesheet" href="../Website/css/progress.css">
-
-    <script>
-       // sidebar 
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggleBtn = document.getElementById("toggleBtn");
-    const sidebar = document.getElementById("sidebar");
-    const mainContent = document.getElementById("mainContent");
-
-    toggleBtn.addEventListener("click", () => {
-      sidebar.classList.toggle("hidden");
-      mainContent.classList.toggle("full-width");
-    });
-  });
-
-  </script>
  </head>
 <body>
   <!-- navbar  -->
@@ -32,10 +17,10 @@
         </a>
         <div class="nav-links">
             <ul class="links">
-                <a href="./recommendation.html">
+                <a href="./recommendation_system.html">
                   <li><button class="nav-btn">Recommendation System</button></li>
                 </a>
-                <a href="./disease_detection.html"><li><button class="nav-btn">Disease Detection</button></li></a>
+                <a href="./disease_detection.php"><li><button class="nav-btn">Disease Detection</button></li></a>
                 <a href="./dashboard.php"><li><button class="nav-btn">Trade Dashboard</button></li></a>
                 <a href="./yearly_planner_en.html">
                 <li><button class="nav-btn">Yearly Planner</button></li>
@@ -92,7 +77,7 @@
 </div>
 </div>
 
-
+<script src="js/dashboard.js"></script>
 <!-- <script src="../LoginSignup/assets/js/progress.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
