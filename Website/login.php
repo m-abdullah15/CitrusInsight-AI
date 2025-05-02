@@ -1,5 +1,5 @@
 <?php
-// Include database connection or any necessary files
+session_start();
 include('./connect.php');
 
 if(isset($_POST['signin'])){
@@ -12,11 +12,16 @@ if(isset($_POST['signin'])){
     $row_data = mysqli_fetch_assoc($result);
     $pass = $row_data['password'];
     $name = $row_data['name'];
-
+    $id = $row_data['id'];
+    $email = $row_data['email'];
+    $_SESSION['name'] = $name;
+    $_SESSION['id'] = $id;
+    $_SESSION['user'] = $username;
+    $_SESSION['email'] = $email;
     if($row_count > 0){
         if($password == $pass){ 
             echo "<script>alert('Welcome, " . addslashes($name) . "');</script>";
-            echo "<script>window.open('disease_detection.html','_self')</script>";
+            echo "<script>window.open('disease_detection.php','_self')</script>";
         } else {
             echo "<script>alert('Incorrect Password or username')</script>";
         }
@@ -165,13 +170,11 @@ if(isset($_POST['signin'])){
             </div>
             <!-- END SIGN UP CONTENT -->
         </div>
-        <!-- END CONTENT SECTION -->
     </div>
 
     <p>
         <a href="./index.php" class="back-to-home">← Back to Home</a>
     </p>
-
     <script src="../Website/js/login.js"></script>
     <script src="../Website/js/about.js"></script>
 </body>
