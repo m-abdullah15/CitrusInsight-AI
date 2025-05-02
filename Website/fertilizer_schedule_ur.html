@@ -16,10 +16,10 @@
         </a>
         <div class="nav-links">
           <ul class="links">
-            <a href="./recommendation.html">
+            <a href="./recommendation_system.html">
               <li><button class="nav-btn">Recommendation System</button></li>
             </a>
-            <a href="./disease_detection.html"
+            <a href="./disease_detection.php"
               ><li><button class="nav-btn">Disease Detection</button></li></a
             ><a href="./dashboard.php"><li><button class="nav-btn">Trade Dashboard</button></li></a>
             <a href="./yearly_planner_en.html">
@@ -460,11 +460,10 @@
           if (this.checked) {
             toggleLabel.textContent = "Switch into English";
             localStorage.setItem("selectedPage", "Switch into English");
-            window.location.href = "fertilizer_schedule_en.html"; // 🔹 Replace with your second page link
-          } else {
+            window.location.href = "fertilizer_schedule_en.html"; // 
             toggleLabel.textContent = "Switch into Urdu";
             localStorage.setItem("selectedPage", "Switch into Urdu");
-            window.location.href = "fertilizer_schedule_ur.html"; // 🔹 Replace with your first page link
+            window.location.href = "fertilizer_schedule_ur.html"; 
           }
         });
       });
