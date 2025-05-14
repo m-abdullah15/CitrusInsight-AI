@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Citrus Production</title>
     <link rel="stylesheet" href="../Website/css/home.css" />
-    <link rel="stylesheet" href="../Website/css/login.css" />
+    <link rel="stylesheet" href="../Website/css/signup.css" />
 </head>
 <body>
     <!-- navbar -->
@@ -76,32 +76,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
             <div class="col align-items-center flex-col sign-up">
                 <div class="form-wrapper align-items-center">
                     <div class="form sign-up">
-                        <!-- Display error message if any -->
-                        <?php if ($errorMessage) { echo "<p style='color: red;'>$errorMessage</p>"; } ?>
+                        
+                    <form method="POST" action="signup.php" id="signupForm">
+                    <div class="input-group">
+                    <i class="bx bxs-user"></i>
+                    <input type="text" name="name" placeholder="Name" required />
+                    <span id="nameError" class="error-msg"></span>
+                    </div>
+                    <div class="input-group">
+                    <i class="bx bxs-user"></i>
+                    <input type="text" name="username" placeholder="Username" required />
+                    <span id="usernameError" class="error-msg"></span>
+                    </div>
+                    <div class="input-group">
+                    <i class="bx bx-mail-send"></i>
+                    <input type="email" name="email" placeholder="Email" required />
+                    <span id="emailError" class="error-msg"></span>
+                    </div>
+                    <div class="input-group">
+                    <i class="bx bxs-lock-alt"></i>
+                    <input type="password" name="password" placeholder="Password" required />
+                    <span id="passwordError" class="error-msg"></span>
+                    </div>
+                    <div class="input-group">
+                    <i class="bx bxs-lock-alt"></i>
+                    <input type="password" name="conpassword" placeholder="Confirm password" required />
+                    <span id="confirmPasswordError" class="error-msg"></span>
+                    </div>
+                    <button type="submit" name="signup">Sign up</button>
+                    </form>
 
-                        <form method="POST" action="signup.php">
-                            <div class="input-group">
-                                <i class="bx bxs-user"></i>
-                                <input type="text" name="name" placeholder="Name" required />
-                            </div>
-                            <div class="input-group">
-                                <i class="bx bxs-user"></i>
-                                <input type="text" name="username" placeholder="Username" required />
-                            </div>
-                            <div class="input-group">
-                                <i class="bx bx-mail-send"></i>
-                                <input type="email" name="email" placeholder="Email" required />
-                            </div>
-                            <div class="input-group">
-                                <i class="bx bxs-lock-alt"></i>
-                                <input type="password" name="password" placeholder="Password" required />
-                            </div>
-                            <div class="input-group">
-                                <i class="bx bxs-lock-alt"></i>
-                                <input type="password" name="conpassword" placeholder="Confirm password" required />
-                            </div>
-                            <button type="submit" name="signup">Sign up</button>
-                        </form>
 
                         <p>
                             <span>Already have an account?</span>
