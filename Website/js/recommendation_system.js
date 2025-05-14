@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Display recommendations
-  recommendationContainer.style.display = "block";
+  recommendationContainer.style.display = "none";
   tasksDiv.textContent = tasks;
   fertilizersDiv.textContent = fertilizers;
   pesticidesDiv.textContent = pesticides;
