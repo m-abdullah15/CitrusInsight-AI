@@ -30,15 +30,13 @@ body {
 }
 
 .container {
-    position: relative;
-    min-height: 100vh;
-    overflow: hidden;
+margin-top: 50px;
 }
 
 .row {
     display: flex;
     flex-wrap: wrap;
-    height: 100vh;
+   
 }
 
 .col {
@@ -206,6 +204,7 @@ body {
 .text {
     margin: 4rem;
     color: var(--white);
+    margin-top: 8rem;
 }
 
 .text h2 {
@@ -361,5 +360,10 @@ body {
 
 .back-to-home:hover {
     color: #f97316;
+}
+.error-msg {
+    color: red;
+    font-size: 0.8rem;
+    margin-left: 5px;
 }
 
