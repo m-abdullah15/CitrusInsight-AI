@@ -18,8 +18,8 @@
    <!-- Linking Swiper CSS -->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
    <link rel="stylesheet" href="./css/home.css">
-   <style>
-.logooo {
+<style>
+  .logooo {
   position: relative; /* Needed for background image */
   background-image: url("./assets/images/background.jpg"); /* Add your image path */
   background-size: cover; /* Cover full area */
@@ -29,44 +29,7 @@
   width: 100%;
   padding: 2rem 0; /* Add some padding */
 }
-.logooo::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* Black overlay with 50% opacity */
-  z-index: 1;
-}
-
-/* Ensure content appears above overlay */
-.logooo * {
-  position: relative;
-  z-index: 2;
-}
-.logooo-flex {
-  display: flex; /* Use flexbox */
-  align-items: center; /* Center vertically */
-  justify-content: start; /* Center horizontally */
-  gap: 0.5rem; /* Add space between logo and heading */
-}
-
-.logoimg {
-  margin-top: 2rem;
-  width: 15rem; /* Adjust logo size */
-  height: auto;
-  left: 10px;
-}
-
-.logo-heading {
-  left: 10px;
-  padding-top: 1rem; ;
-  font-size: 2.25rem; /* Adjust heading size */
-  color: white; /* Ensure text is visible */
-}
-
-   </style>
+</style>
    </head>
 <body>
 <div class="logooo">
@@ -111,9 +74,27 @@
     </div>
   </nav>
   </header>
+  <main class="hero" style="background-color:#FFE5B4	;">
+    <div class="disease-image">
+      <a href="login.php"><img src="./assets/images/disease-logo.jpg" alt="Orange Slice" ></a>
+    </div>
+    <div class="hero-content" >
+      <h2><a href="login.php">CitrusInsight AI Citrus Disease Detection</a></h2>
+      <p>
+CitrusInsight AI is an advanced web-based tool designed
+ to detect and classify citrus leaf diseases using artificial
+  intelligence. By uploading a photo of a citrus leaf, users receive
+   instant and accurate predictions of common diseases affecting citrus
+   crops. Our AI model analyzes features such as spots, discoloration, 
+   and leaf damage to assist farmers in early diagnosis and effective disease
+    management.
 
+Empower your orchard with fast, reliable, and intelligent plant health
+ insights — all in one click.</p>
+    </div>
+  </main>
   <!-- gpt  -->
- <main class="hero">
+ <main class="hero" style="background-color:#FFD580;">
     <div class="hero-image">
       <img src="./assets/orange slice.jpg" alt="Orange Slice">
     </div>
