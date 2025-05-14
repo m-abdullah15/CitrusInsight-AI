@@ -139,11 +139,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
         </div>
         <!-- END CONTENT SECTION -->
     </div>
-
-    <p>
-        <a href="./index.php" class="back-to-home">← Back to Home</a>
-    </p>
-
     <script src="../Website/js/signup.js"></script>
     <script src="../Website/js/about.js"></script>
 </body>
