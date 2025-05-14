@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Citrus Recommendation System</title>
-    <link rel="stylesheet" href="../Website/css/recommendation_system.css">
+    <link rel="stylesheet" href="./css/recommendation_system.css">
 </head>
 <body>
     <nav>
@@ -34,12 +34,14 @@
           </nav>
           <div class="full-container">
     <!-- addtional information  -->
-     <div id="monthly-info">
-    <div id="january-info" class="month-details"> 
-                <div class="section">
-            <div class="section-header">January</div>
-            <div class="section-content">
-                <ul style="list-style-type:disc;">
+    <div id="monthly-info">
+        <div id="january-info" class="month-details"> 
+            <h1>📅 Monthly Citrus Recommendation</h1>
+            <div class="section">
+                <div class="section-header">January</div>
+                <div class="section-content">
+                    <ul style="list-style-type:disc;">
+                    
                     <li> In orchards where the fruits have been picked, complete the pruning process - leave the dead, diseased branches and dead leaves on the trees.               </li>
                     <li> Keep an eye on baby mealybugs by spraying control where they appear. For this purpose, apply chloropyriphos 25 ml of methidathion 25 ml or profenofos 25 ml per liter of water on tree trunks from two to two and a half feet above the ground and in the canopy of the plant. Spray on the ground below</li>      
                     <li> Take measures to protect plants from the harmful effects of fog, especially by pruning and thinning trees like bamboo or other tall trees around the orchards, to allow sunlight and air to pass through the orchards.</li>
@@ -54,12 +56,24 @@
                     <img src="./assets/images/citrus_mealybug_3.png" alt="Disease 3">
                 </div>
                 <p class="note"> Citrus Mealybug  </p>
-
+                <div id="recommendation" class="recommendation-box" style="display: none;">
+                    <h2>📝 Tips for <span id="selectedMonth">This month :</span></h2>
+                    <div id="tasks"></div>
+                    <div id="fertilizers"></div>
+                    <div id="pesticides"></div>
+                </div>
+                <div class="tip-container">
+                        <h2>📝 Tips for <span id="selectedMonth">This month :</span></h2>
+      <div class="taskss">Tasks: "🌱 Pruning and training should start in this month."<br></div>
+     <div class="taskss">Fertilizers: "💧 Use nitrogen-based fertilizers."<br></div> 
+      <div class="taskss">Pesticides: "🐞 Apply pest control to prevent diseases."<br></div>
+                    </div>
             </div>
         </div>
     </div>
 
     <div id="february-info" class="month-details">
+        <h1>📅 Monthly Citrus Recommendation</h1>
         <div class="section">
             <div class="section-header">February </div>
             <div class="section-content">
@@ -73,12 +87,19 @@
                     <li> Complete fruit harvesting to allow the plants to prepare for the next crop season.</li>
                     <li> Spray appropriate pesticides to control aphids and mealybugs.</li>
                 </ul>
+                <div class="tip-container">
+                        <h2>📝 Tips for <span id="selectedMonth">This month :</span></h2>
+      <div class="taskss">Tasks: "🍊 Fertilization begins in this month to enhance growth.",<br></div>
+      <div class="taskss">Fertilizers: "💧 Use phosphorus-rich fertilizers.",<br></div>
+      <div class="taskss">Pesticides: "🐜 Monitor citrus pests and apply treatment if needed.",<br></div>
+                    </div>
             </div>
         </div>
 
     </div>
 
     <div id="march-info" class="month-details">
+        <h1>📅 Monthly Citrus Recommendation</h1>
         <div class="section">
             <div class="section-header">March</div>
             <div class="section-content">
@@ -95,13 +116,19 @@
                     <img src="./assets/images/citrus_thrips.png" alt="Disease 1">
                 </div>
                 <p class="note"> Citrus Thrips </p>
-
+                  <div class="tip-container">
+                        <h2>📝 Tips for <span id="selectedMonth">This month :</span></h2>
+      <div class="taskss">Tasks: "🌞 Pest control should be carefully monitored."<br></div>
+      <div class="taskss">Fertilizers: "💧 Balanced fertilizer application is required."<br></div>
+      <div class="taskss">Pesticides: "🐛 Use organic pesticides to protect the citrus trees."<br></div>
+                    </div>
 
             </div>
         </div>
 
     </div>
 <div id="april-info" class="month-details">
+    <h1>📅 Monthly Citrus Recommendation</h1>
         <div class="section">
             <div class="section-header">April</div>
             <div class="section-content">
@@ -136,14 +163,20 @@
 
                 </div>
                 <p class="note"> Citrus Scab </p>
-
+                <div class="tip-container">
+                        <h2>📝 Tips for <span id="selectedMonth">This month :</span></h2>
+      <div class="taskss">Tasks: "🌿 Start irrigation as temperatures rise." <br></div>
+      <div class="taskss">Fertilizers: "💧 Apply potassium-rich fertilizers."<br></div>
+      <div class="taskss">Pesticides: "🦟 Monitor and control fungal infections."<br></div>
+                    </div>
             </div>
         </div>
 
 </div>
 <div id="may-info" class="month-details">
-        <div class="section">
-            <div class="section-header">May</div>
+    <h1>📅 Monthly Citrus Recommendation</h1>
+    <div class="section">
+        <div class="section-header">May</div>
             <div class="section-content">
                 <ul style="list-style-type:disc;">
                     <li> Irrigate large citrus orchards every 15 days, while small plants should be watered every 7 to 10 days.</li>
@@ -151,12 +184,19 @@
                     <li> Decomposed leaves, tree branches, and crop residues can also be used as compost for mulching.</li>
                     <li> Continuously remove sprouts below the grafted part on the rootstock of nursery plants.</li>
                 </ul>
-
+                <div class="tip-container">
+                        <h2>📝 Tips for <span id="selectedMonth">This month :</span></h2>
+      <div class="taskss">Tasks: "🌞 Protect trees from extreme heat."<br></div>
+      <div class="taskss">Fertilizers: "💧 Apply micronutrient foliar spray."<br></div>
+      <div class="taskss">Pesticides: "🐝 Use pest traps to prevent infestations."<br></div>
+                    </div>
+                
             </div>
         </div>
 
 </div>
 <div id="june-info" class="month-details">
+    <h1>📅 Monthly Citrus Recommendation</h1>
         <div class="section">
             <div class="section-header">June</div>
             <div class="section-content">
@@ -165,12 +205,18 @@
                     <li> Wherever the mulch layer has reduced, replenish and level it properly.</li>
                     <li> To prevent fruit drop, ensure proper irrigation. Water every 10 days or as per the tensiometer scale. If the tensiometer scale exceeds 40-50, irrigate immediately.</li>
                 </ul>
-
+                 <div class="tip-container">
+                        <h2>📝 Tips for <span id="selectedMonth">This month :</span></h2>
+      <div class="taskss">Tasks: "🌱 Ensure proper watering and mulching."<br></div>
+      <div class="taskss">Fertilizers: "💧 Reduce fertilizer application in extreme heat."<br></div>
+      <div class="taskss">Pesticides: "🦗 Apply insecticides if pest activity increases."<br></div>
+                    </div>
             </div>
         </div>
 
 </div>
 <div id="july-info" class="month-details">
+    <h1>📅 Monthly Citrus Recommendation</h1>
         <div class="section">
             <div class="section-header">July</div>
             <div class="section-content">
@@ -183,11 +229,17 @@
                     <li> During the rainy season, pests like citrus psylla, citrus scales, and cottony cushion scales become active. To control them, use any of the following insecticides: Bard at 2.5 ml per liter of water, or Nova Star at 1.25 ml per liter of water, ensuring to mix one tablespoon of detergent in each spray machine.</li>
                     <li> For cottony cushion scales, spraying neem oil at a rate of 10 ml per liter of water can yield effective results.</li>
                 </ul>
-
+                <div class="tip-container">
+                        <h2>📝 Tips for <span id="selectedMonth">This month :</span></h2>
+      <div class="taskss">Tasks: "🌦️ Monitor soil moisture levels carefully."<br></div>
+      <div class="taskss">Fertilizers: "💧 Apply organic compost to enrich soil."<br></div>
+      <div class="taskss">Pesticides: "🐜 Protect against fungal diseases during monsoon."<br></div>
+                    </div>
             </div>
         </div>
 </div>
 <div id="august-info" class="month-details">
+    <h1>📅 Monthly Citrus Recommendation</h1>
         <div class="section">
             <div class="section-header">August</div>
             <div class="section-content">
@@ -215,12 +267,18 @@
 
                 </div>
                 <p class="note"> Citrus Canker </p>
-
+                <div class="tip-container">
+                        <h2>📝 Tips for <span id="selectedMonth">This month :</span></h2>
+      <div class="taskss">Tasks: "🌿 Maintain irrigation cycles."<br></div>
+      <div class="taskss">Fertilizers: "💧 Use nitrogen-based fertilizers to boost growth."<br></div>
+      <div class="taskss">Pesticides: "🦟 Check for citrus psyllid and control accordingly."<br></div>
+                    </div>
             </div>
         </div>
 
 </div>
 <div id="september-info" class="month-details">
+    <h1>📅 Monthly Citrus Recommendation</h1>
         <div class="section">
             <div class="section-header">September</div>
             <div class="section-content">
@@ -231,10 +289,17 @@
                     <li> Apply the remaining amount of NPK fertilizer, ranging from half a kilogram to one kilogram depending on the tree's age, in September.</li>
                     <li> In case of a deficiency of micronutrients, prepare a solution of the respective elements and spray accordingly.</li>
                 </ul>
+                <div class="tip-container">
+                        <h2>📝 Tips for <span id="selectedMonth">This month :</span></h2>
+      <div class="taskss">Tasks: "🍂 Prepare for fruit maturation."<br></div>Tasks: "🍂 Prepare for fruit maturation."<br>
+      <div class="taskss">Fertilizers: "💧 Apply calcium-based nutrients for fruit quality."<br></div>
+      <div class="taskss">Pesticides: "🐞 Spray organic pesticides to protect from late pests."<br></div>
+                    </div>
             </div>
         </div>
 </div>
 <div id="october-info" class="month-details">
+    <h1>📅 Monthly Citrus Recommendation</h1>
         <div class="section">
             <div class="section-header">October</div>
             <div class="section-content">
@@ -254,13 +319,17 @@
 
                 </div>
                 <p class="note"> Fruit fly   </p>
-
-
-
+                <div class="tip-container">
+                        <h2>📝 Tips for <span id="selectedMonth">This month :</span></h2>
+      <div class="taskss">Tasks: "🍊 Monitor fruit ripening closely."<br></div>
+      <div class="taskss">Fertilizers: "💧 Maintain steady fertilizer application."<br></div>
+      <div class="taskss">Pesticides: "🦗 Apply protective sprays to prevent pest attacks."<br></div>
+                    </div>
             </div>
         </div>
 </div>
 <div id="november-info" class="month-details">
+    <h1>📅 Monthly Citrus Recommendation</h1>
         <div class="section">
             <div class="section-header">November</div>
             <div class="section-content">
@@ -280,12 +349,17 @@
 
                 </div>
                 <p class="note">Citrus Silla(Tella)</p>
-
-
+                <div class="tip-container">
+                        <h2>📝 Tips for <span id="selectedMonth">This month :</span></h2>
+      <div class="taskss">Tasks: "🌡️ Reduce irrigation as temperatures drop."<br></div>
+      <div class="taskss">Fertilizers: "💧 Apply potassium-based fertilizers."<br></div>
+      <div class="taskss">Pesticides: "🐝 Keep trees free from overwintering pests."<br></div>
+                    </div>
             </div>
         </div>
 </div>
 <div id="december-info" class="month-details">
+    <h1>📅 Monthly Citrus Recommendation</h1>
         <div class="section">
             <div class="section-header">December</div>
             <div class="section-content">
@@ -296,7 +370,12 @@
                     <li> Start harvesting Kinnow oranges at the end of December, as by then, the fruit reaches its acceptable level of ripeness and internal sweetness. However, the harvesting process should be carried out using standard methods after assessing ripeness.</li>
                     <li> The harvesting of most varieties of oranges and grapefruit should be completed within this month.</li>
                 </ul>
-
+                <div class="tip-container">
+                        <h2>📝 Tips for <span id="selectedMonth">This month :</span></h2>
+      <div class="taskss">Tasks: "❄️ Protect trees from frost if needed."<br></div>
+      <div class="taskss">Fertilizers: "💧 Stop fertilizer application until early spring."<br></div>
+      <div class="taskss">Pesticides: "🦟 Inspect trees for dormant pests and take action."<br></div>
+                    </div>
             </div>
         </div>
 
@@ -328,7 +407,7 @@
       <div id="resourceTable"></div>
     </section>
     
-            <h1>📅 Monthly Citrus Recommendation</h1>
+            
             <!-- <p>Select a month to view the recommended tasks, fertilizers, and pesticides.</p>
             
             <label for="monthSelect">Choose a Month:</label>
@@ -346,16 +425,9 @@
                 <option value="November">November</option>
                 <option value="December">December</option>
             </select> -->
-    
-            <div id="recommendation" class="recommendation-box" style="display: none;">
-                <h2>📝 Recommendations for <span id="selectedMonth">Selected month :</span></h2>
-                <div id="tasks"></div>
-                <div id="fertilizers"></div>
-                <div id="pesticides"></div>
-            </div>
         </div>
 </div>
     <!-- addtional information  -->
-    <script src="../Website/js/recommendation_system.js"></script>
+    <script src="./js/recommendation_system.js"></script>
 </body>
 </html>
