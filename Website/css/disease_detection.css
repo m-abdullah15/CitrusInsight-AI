@@ -87,6 +87,17 @@ h3.result {
     color: #000000;
     font-weight: bold;
 }
+.solution_heading{
+  background:#ff9901 ;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+.hide{
+    display: none;
+}
 
 #imagePreview {
     width: 250px;
