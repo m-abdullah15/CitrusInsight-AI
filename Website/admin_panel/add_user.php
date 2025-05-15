@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $password = $_POST['password'];
 
     $stmt = $conn->prepare("INSERT INTO user_data (name, username, email, password) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("ssss", $name, $username, $email, $password);
