@@ -14,6 +14,7 @@ if(isset($_POST['signin'])){
     $row_data = mysqli_fetch_assoc($result);
     $row_count2 = mysqli_num_rows($result_model);
     $row_data2 = mysqli_fetch_assoc($result_model);
+        if($row_count > 0){
     $model_name = $row_data2['model_name'];
     $pass = $row_data['password'];
     $name = $row_data['name'];
@@ -24,7 +25,7 @@ if(isset($_POST['signin'])){
     $_SESSION['user'] = $username;
     $_SESSION['email'] = $email;
     $_SESSION['model_name'] = $model_name;
-    if($row_count > 0){
+
         if($password == $pass){ 
             echo "<script>alert('Welcome, " . addslashes($name) . "');</script>";
             echo "<script>window.open('disease_detection.php','_self')</script>";
