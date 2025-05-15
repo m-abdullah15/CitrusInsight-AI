@@ -4,11 +4,14 @@ session_start();
 
 $user_id = $_SESSION['user_id'];
 $model_name = $_SESSION['model_name'];
-$predicted_class = $_POST['predicted_class'];
-$confidence_score = $_POST['confidence_score'];
-
+$predicted_class = $_POST['predicted_class'] ?? null;
+$confidence_score = $_POST['confidence_score'] ?? null;
 if (empty($predicted_class) || empty($confidence_score)) {
     echo json_encode(["status" => "error", "message" => "Missing data"]);
+    exit();
+}
+if (!$user_id || !$model_name) {
+    echo json_encode(["status" => "error", "message" => "Missing session data", "user_id" => $user_id, "model_name" => $model_name]);
     exit();
 }
 
