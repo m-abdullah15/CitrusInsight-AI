@@ -384,48 +384,22 @@
 </div>
  <!-- New section for Water and Fertilizer Requirements -->
  <div class="container" id="monthly-recommendation">
-    <section id="user-inputs">
-      <h2>Fertilizer & Water Recommendations</h2>
-      <label for="citrusType">Citrus Variety:</label>
-    <select id="citrusType">
-      <option value="kinnow">Kinnow</option>
-      <option value="orange">Orange</option>
-      <option value="lemon">Lemon</option>
-      <option value="grapefruit">Grapefruit</option>
-    </select>
-      <label for="farmSize">Farm Size (in acres):</label>
-      <input type="number" id="farmSize" placeholder="e.g., 5" required>
+<section class="recommendation-section">
     
-      <label for="treesPerAcre">Trees per acre (default 80):</label>
-      <input type="number" id="treesPerAcre" placeholder="e.g., 80">
+    <h2>📋 Personalized Orchard Planning</h2>
     
-      <button onclick="calculateResources()">Get Resource Recommendation</button>
-    </section>
+    <div id="landSummary" class="summary-box">
+        <!-- Land info will appear here -->
+    </div>
     
-    <!-- Section where we'll display the table -->
-    <section id="resource-results">
-      <div id="resourceTable"></div>
-    </section>
-    
-            
-            <!-- <p>Select a month to view the recommended tasks, fertilizers, and pesticides.</p>
-            
-            <label for="monthSelect">Choose a Month:</label>
-            <select id="month">
-                <option value="January">January</option>
-                <option value="February">February</option>
-                <option value="March">March</option>
-                <option value="April">April</option>
-                <option value="May">May</option>
-                <option value="June">June</option>
-                <option value="July">July</option>
-                <option value="August">August</option>
-                <option value="September">September</option>
-                <option value="October">October</option>
-                <option value="November">November</option>
-                <option value="December">December</option>
-            </select> -->
-        </div>
+    <div id="recommendationOutput" class="output-box">
+        <!-- Fertilizer, water, tips will appear here -->
+    </div>
+    <div style="text-align: center; margin-bottom: 10px;">
+      <a href="farm_info.html" class="land-info-link">📄 Fill or Update Land Information</a>
+    </div>
+</section>
+
 </div>
     <!-- addtional information  -->
     <script src="./js/recommendation_system.js"></script>
