@@ -19,6 +19,7 @@ if (!isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Citrus Disease Detection</title>
     <link rel="stylesheet" href="./css/disease_detection.css">
+    <link rel="stylesheet" href="./css/navbar.css">
 </head>
 <body>
 <nav>
