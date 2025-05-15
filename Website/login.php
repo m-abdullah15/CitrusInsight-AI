@@ -6,18 +6,24 @@ if(isset($_POST['signin'])){
 
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $select_query = "SELECT * FROM `userdata` WHERE username='$username'";
+    $select_query = "SELECT * FROM `user_data` WHERE username='$username'";
+    $select_query2 = "SELECT * FROM `ML_model` WHERE model_id='1'";
     $result = mysqli_query($conn, $select_query);
+    $result_model = mysqli_query($conn, $select_query2);
     $row_count = mysqli_num_rows($result);
     $row_data = mysqli_fetch_assoc($result);
+    $row_count2 = mysqli_num_rows($result_model);
+    $row_data2 = mysqli_fetch_assoc($result_model);
+    $model_name = $row_data2['model_name'];
     $pass = $row_data['password'];
     $name = $row_data['name'];
-    $id = $row_data['id'];
+    $user_id = $row_data['user_id'];
     $email = $row_data['email'];
     $_SESSION['name'] = $name;
-    $_SESSION['id'] = $id;
+    $_SESSION['user_id'] = $user_id;
     $_SESSION['user'] = $username;
     $_SESSION['email'] = $email;
+    $_SESSION['model_name'] = $model_name;
     if($row_count > 0){
         if($password == $pass){ 
             echo "<script>alert('Welcome, " . addslashes($name) . "');</script>";
@@ -136,9 +142,9 @@ if(isset($_POST['signin'])){
                             <span>
                                 Don't have an account?
                             </span>
-                            <b onclick="toggle()" class="pointer">
+                            <a href="signup.php"><b class="pointer">
                                 Sign up here
-                            </b>
+                            </b></a>
                         </p>
                     </div>
                 </div>
@@ -172,9 +178,6 @@ if(isset($_POST['signin'])){
         </div>
     </div>
 
-    <p>
-        <a href="./index.php" class="back-to-home">← Back to Home</a>
-    </p>
     <script src="../Website/js/login.js"></script>
     <script src="../Website/js/about.js"></script>
 </body>
