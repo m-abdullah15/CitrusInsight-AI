@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
 
     if (!empty($_POST['password'])) {
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $password = $_POST['password'];
         $stmt = $conn->prepare("UPDATE user_data SET name=?, username=?, email=?, password=? WHERE user_id=?");
         $stmt->bind_param("ssssi", $name, $username, $email, $password, $id);
     } else {
