@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
     } else {
         
         // Insert into database
-        $query = "INSERT INTO `userdata` ( name , username, email, password) VALUES ('$name','$username', '$email', '$password')";
+        $query = "INSERT INTO `user_data` ( name , username, email, password) VALUES ('$name','$username', '$email', '$password')";
         if (mysqli_query($conn, $query)) {
             $successMessage = 'Sign up successful!';
             echo "<script>alert('$successMessage');</script>";
@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
 
                         <p>
                             <span>Already have an account?</span>
-                            <b onclick="toggle()" class="pointer">Sign in here</b>
+                            <a href="login.php"><b class="pointer">Sign in here</b></a>
                         </p>
                     </div>
                 </div>
