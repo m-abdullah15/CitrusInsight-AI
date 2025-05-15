@@ -6,6 +6,7 @@
 	<title>Dashboards</title>
   <link rel="stylesheet" href="../Website/css/dashboard.css">
 	<link rel="stylesheet" href="../Website/css/progress.css">
+  <link rel="stylesheet" href="./css/navbar.css">
  </head>
 <body>
   <!-- navbar  -->
