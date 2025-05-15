@@ -1,3 +1,5 @@
+const landSummary = document.getElementById("landSummary");
+const output = document.getElementById("recommendationOutput");
 
   // Get the current month dynamically
   const currentMonthIndex = new Date().getMonth(); // 0 = January, 1 = February, ..., 11 = December
@@ -16,7 +18,22 @@
     "december",
   ];
   let currentMonth = monthNames[currentMonthIndex]; // Convert index to month name
-
+document.addEventListener("DOMContentLoaded", function () {
+fetch('get_farm_data.php')
+.then(response => response.json())
+.then(data => {
+if (data.error) {
+  landSummary.innerHTML = "<p>❌ No land information found. Please fill out your land details first.</p>";
+  output.style.display="none";
+  return;
+  return;
+  }
+    const farm_Size = parseFloat(data.farm_size);
+    const trees_PerAcre = parseFloat(data.plant_count);
+    const citrus_Type = data.citrus_type;
+calculateResources(farm_Size, trees_PerAcre, citrus_Type);
+});
+});
 document.addEventListener("DOMContentLoaded", function () {
   const recommendationContainer = document.getElementById("recommendation");
   const tasksDiv = document.getElementById("tasks");
@@ -194,10 +211,10 @@ if (resourceRequirements[currentMonth]) {
 }
 
 // Display water and fertilizer info
-function calculateResources() {
-  const farmSize = document.getElementById("farmSize").value;
-  const treesPerAcre = document.getElementById("treesPerAcre").value || 80;
-  const citrusType = document.getElementById("citrusType").value;
+function calculateResources(farmsize, treesperacre, citrustype) {
+  const farmSize = farmsize;
+  const treesPerAcre = treesperacre;
+  const citrusType = citrustype; 
 
   if (farmSize <= 0) {
     alert("Please enter a valid farm size.");
@@ -293,7 +310,7 @@ function calculateResources() {
     </table>
   `;
 
-  document.getElementById("resourceTable").innerHTML = resultHTML;
+  output.innerHTML = resultHTML;
   // ✅ Monthly Tips Logic
   let monthlyTip = "";
 
@@ -346,12 +363,9 @@ function calculateResources() {
   }
 
   // ✅ Append Tip below your result table
-  document.getElementById("resourceTable").innerHTML += `
+  output.innerHTML += `
   <p style="margin-top: 20px; font-size: 1.1em; color: green;">
     🔔 <strong>Tip for ${currentMonthName}:</strong> ${monthlyTip}
   </p>
 `;
 }
-let monthlyInfo = document.querySelector("#monthly-info");
-if(currentMonth==='may'||currentMonth==='june'||currentMonth==='july')
-  monthlyInfo.style.marginBottom="250px";
