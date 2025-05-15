@@ -5,6 +5,7 @@ $name = $_SESSION['name'];
 $user_id = $_SESSION['user_id'];
 $email = $_SESSION['email'];
 $username = $_SESSION['user'];
+$model_name = $_SESSION['model_name'];
 if (!isset($_SESSION['user_id'])) {
     echo "<script>alert('Please login first');</script>";
     echo "<script>window.open('login.php','_self')</script>";
