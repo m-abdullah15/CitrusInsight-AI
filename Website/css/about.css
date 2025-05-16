@@ -90,7 +90,7 @@ section .section-title::after {
   background: var(--light-pink-color);
       font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f5d89f; /* Light citrus color */
+    background-color: #fae4b9; /* Light citrus color */
     color: #333;
 }
 
