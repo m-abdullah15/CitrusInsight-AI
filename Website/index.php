@@ -415,7 +415,7 @@ Empower your orchard with fast, reliable, and intelligent plant health
   </div>
 </div>
 <!-- Footer  -->
-\<footer class="relative bg-[#FFE8B6] text-gray-800 py-10 px-6 border-t-4 border-orange-400 shadow-inner overflow-hidden">
+<footer class="relative bg-[#f8efcf] text-gray-800 py-10 px-6 border-t-4 border-orange-300 shadow-inner overflow-hidden">
   <!-- Decorative Citrus Image -->
   <img src="./assets/logo.png" 
        alt="Citrus" 
