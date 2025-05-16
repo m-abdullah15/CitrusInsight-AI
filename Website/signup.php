@@ -11,14 +11,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
     $confirmPassword = $_POST['conpassword'] ?? '';
-
+    $date=date("Y-m-d");
     // Validation: Check if passwords match
     if ($password !== $confirmPassword) {
         $errorMessage = 'Passwords do not match!';
     } else {
         
         // Insert into database
-        $query = "INSERT INTO `user_data` ( name , username, email, password) VALUES ('$name','$username', '$email', '$password')";
+        $query = "INSERT INTO `user_data` ( name , username, email, password,date) VALUES ('$name','$username', '$email', '$password','$date')";
         if (mysqli_query($conn, $query)) {
             $successMessage = 'Sign up successful!';
             echo "<script>alert('$successMessage');</script>";
