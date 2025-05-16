@@ -62,24 +62,34 @@ if (!isset($_SESSION['user_id'])) {
   </div>
   <button id="closeSidebar" class="close-btn">✖</button>
 </div>
-    <div class="container">
-        <h2>🍊 Citrus Disease Detection</h2>
-        <br>
-        <img id="imagePreview" src="../Website/assets/images/placeholder.jpg" alt="Image Preview">
-        <br>
-        <div class="button-group">
-            <label class="custom-file-upload" id="captureButton">📸 Take Photo</label>
-            <label class="custom-file-upload" id="selectButton">📂 Choose from Storage</label>
-            <input type="file" id="cameraInput" accept="image/*" capture="environment" style="display: none;">
-            <input type="file" id="fileInput" accept="image/*" style="display: none;">
-            <button id="predictButton">🔍 Predict</button>
-        </div>        
-        <div class="loader" id="loader"></div>
-        <h3 class="result"><span id="result"></span></h3>
-        <h3 class="result"><span id="confidence"></span></h3>
-        <h3 class="solution_heading hide">Solution:</h3>
-        <strong class="solution"></strong>
+<div class="container enhanced-detection">
+  <h2 class="section-title">🍊 Citrus Disease Detection</h2>
+
+  <div class="card-detection">
+    <img id="imagePreview" src="../Website/assets/images/placeholder.jpg" alt="Image Preview" class="image-preview" />
+
+    <div class="button-group">
+      <label class="custom-file-upload" id="captureButton">📸 Take Photo</label>
+      <label class="custom-file-upload" id="selectButton">📂 Choose from Storage</label>
+      <input type="file" id="cameraInput" accept="image/*" capture="environment" style="display: none;">
+      <input type="file" id="fileInput" accept="image/*" style="display: none;">
+      <button id="predictButton">🔍 Predict</button>
     </div>
+
+    <div class="loader" id="loader"></div>
+
+    <div class="result-area">
+  <h3 class="result"><span id="result"></span></h3>
+  <h3 class="result"><span id="confidence"></span></h3>
+
+  <div class="solution-card hide" id="solutionCard">
+    <h3>🩺 Suggested Solution:</h3>
+    <strong id="solutionText"></strong>
+  </div>
+</div>
+  </div>
+</div>
+
     </div>
     <script>
 let name = "<?php echo $name; ?>";
