@@ -198,20 +198,28 @@ async function predictDisease() {
 const formData = new FormData();
 formData.append('predicted_class', predictedClass);
 formData.append('confidence_score', Confidence);
+formData.append('image', fileInput);
 
 fetch('save_disease_result.php', {
     method: 'POST',
     body: formData
 })
-.then(response => response.json())
-.then(data => {
-    if (data.status === "success") {
-        console.log("Report saved to database");
-    } else {
-        console.error("Failed to save report:", data.message);
+.then(response => response.text()) // Use text first
+.then(raw => {
+    console.log("Raw response:", raw); // Log what PHP returned
+    try {
+        const data = JSON.parse(raw); // Try to parse as JSON
+        if (data.status === "success") {
+            console.log("Report saved to database");
+        } else {
+            console.error("Failed to save report:", data.message);
+        }
+    } catch (e) {
+        console.error("Error parsing JSON:", e, raw);
     }
 })
-.catch(error => console.error("Error:", error));
+.catch(error => console.error("Fetch error:", error));
+
 
                 } catch (error) {
                     console.error("Error:", error);
