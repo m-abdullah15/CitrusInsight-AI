@@ -89,7 +89,6 @@ if (!isset($_SESSION['user_id'])) {
 </div>
   </div>
 </div>
-
     </div>
     <script>
 let name = "<?php echo $name; ?>";
