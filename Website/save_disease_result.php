@@ -15,9 +15,22 @@ if (!$user_id || !$model_name) {
     exit();
 }
 
-$sql = "INSERT INTO disease_report (user_id,model_name, prediction_result, confidence_score) VALUES (?,?, ?, ?)";
+// Image upload path
+$target_dir = "../../uploads/"; // 👈 Relative path from current file
+$image_name = basename($_FILES["image"]["name"]);
+$target_file = $target_dir . time() . "_" . $image_name; // Unique filename
+
+// Move uploaded file
+if (!move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+    echo json_encode(["status" => "error", "message" => "Image upload failed"]);
+    exit();
+}
+
+// Optional: Save image path to DB
+$image_path = str_replace("../", "", $target_file);
+$sql = "INSERT INTO disease_report (user_id,model_name, prediction_result, confidence_score,image_path) VALUES (?,?, ?, ?,?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("issd", $user_id,$model_name, $predicted_class, $confidence_score);
+$stmt->bind_param("issds", $user_id,$model_name, $predicted_class, $confidence_score, $image_path);
 
 if ($stmt->execute()) {
     echo json_encode(["status" => "success"]);
