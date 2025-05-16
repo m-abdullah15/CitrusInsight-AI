@@ -191,7 +191,9 @@ margin-top: 50px;
 .container.sign-up .social-list.sign-up>div {
     transform: scale(1);
 }
-
+.form.sign-up{
+    margin-top: 4rem;
+}
 .content-row {
     position: absolute;
     top: 0;
@@ -216,6 +218,7 @@ margin-top: 50px;
 }
 .text.sign-up h2{
     margin-left: 5rem;
+    margin-top: 10rem;
 }
 .text p {
     font-weight: 600;
