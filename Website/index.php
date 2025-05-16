@@ -18,6 +18,9 @@
    <!-- Linking Swiper CSS -->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
    <link rel="stylesheet" href="./css/home.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <script src="https://cdn.tailwindcss.com"></script>
+
 <style>
   .logooo {
   position: relative; /* Needed for background image */
@@ -411,6 +414,65 @@ Empower your orchard with fast, reliable, and intelligent plant health
     </div>
   </div>
 </div>
+<!-- Footer  -->
+\<footer class="relative bg-[#FFE8B6] text-gray-800 py-10 px-6 border-t-4 border-orange-400 shadow-inner overflow-hidden">
+  <!-- Decorative Citrus Image -->
+  <img src="./assets/logo.png" 
+       alt="Citrus" 
+       class="absolute bottom-2 right-2 w-20 h-20 opacity-60 pointer-events-none select-none" />
+
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+    
+    <!-- Brand -->
+    <div>
+      <h2 class="text-2xl font-bold mb-3 text-orange-600">CitrusInsight AI</h2>
+      <p class="text-sm">Empowering farmers with smart citrus insights.</p>
+      <div class="flex space-x-3 mt-4 text-xl text-orange-500">
+        <a href="#" class="hover:text-yellow-500"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-yellow-500"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:text-yellow-500"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- Get Help -->
+    <div>
+      <h3 class="text-xl font-semibold mb-4 text-orange-600">Get Help</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:text-orange-500">FAQs</a></li>
+        <li><a href="#" class="hover:text-orange-500">Privacy Policy</a></li>
+        <li><a href="#" class="hover:text-orange-500">Terms of Service</a></li>
+        <li><a href="#" class="hover:text-orange-500">Support</a></li>
+      </ul>
+    </div>
+
+    <!-- Discover -->
+    <div>
+      <h3 class="text-xl font-semibold mb-4 text-orange-600">Discover</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:text-orange-500">Recommendation System</a></li>
+        <li><a href="#" class="hover:text-orange-500">Disease Detection</a></li>
+        <li><a href="#" class="hover:text-orange-500">Yearly Planner</a></li>
+        <li><a href="#" class="hover:text-orange-500">Dashboard</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Us -->
+    <div>
+      <h3 class="text-xl font-semibold mb-4 text-orange-600">Contact Us</h3>
+      <p class="text-sm">Email: m.abdullahhh15@gmail.com</p>
+      <p class="text-sm mt-2">Phone: 
+      +92-305-2686065</p>
+      <p class="text-sm mt-2">Location: Sargodha, Pakistan</p>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="mt-10 border-t border-orange-300 pt-4 text-center text-sm text-gray-600 z-10 relative">
+    © 2025 CitrusInsight AI. All rights reserved.
+  </div>
+</footer>
+
+
 <script src="js/index.js"></script>
     <script src="../Website/js/about.js"></script>
     <script src="../Website/js/login.js"></script>
