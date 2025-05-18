@@ -20,11 +20,13 @@ if(isset($_POST['signin'])){
     $name = $row_data['name'];
     $user_id = $row_data['user_id'];
     $email = $row_data['email'];
+    $user_date = $row_data['date'];
     $_SESSION['name'] = $name;
     $_SESSION['user_id'] = $user_id;
     $_SESSION['user'] = $username;
     $_SESSION['email'] = $email;
     $_SESSION['model_name'] = $model_name;
+    $_SESSION['user_date']=$user_date;
 
         if($password == $pass){ 
             echo "<script>alert('Welcome, " . addslashes($name) . "');</script>";
@@ -33,7 +35,7 @@ if(isset($_POST['signin'])){
             echo "<script>alert('Incorrect Password or username')</script>";
         }
     } else {
-        echo "<script>alert('User does not exist')</script>";
+        echo "<script>alert('User does not exist or wrong password')</script>";
     }
 }
 ?>
