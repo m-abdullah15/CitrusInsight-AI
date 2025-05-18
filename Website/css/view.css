@@ -1,0 +1,215 @@
+    body.dark {
+      --bg: #0f172a;
+      --text: #ffffff;
+      --box: #1e293b;
+      --border: #334155;
+      --highlight: #3b82f6;
+      --low: #10b981;
+      --primary-color: #3b82f6;
+      --medium: #fbbf24;
+      --high: #ef4444;
+      --solution-bg: #0f172a;
+      --solution-text: #e2e8f0;
+    }
+
+    :root {
+      --bg: #f9fafb;
+      --text: #1e293b;
+      --box: #ffffff;
+      --primary-color: #3b82f6;
+      --border: #cbd5e1;
+      --highlight: #2563eb;
+      --low: #059669;
+      --medium: #d97706;
+      --high: #dc2626;
+      --solution-bg: #f3f4f6;
+      --solution-text: #1e293b;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      width: 100%;
+      background-color: var(--box);
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--text);
+    }
+
+    .theme-toggle {
+      position: fixed;
+      background-color: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-left:1220px;
+      margin-top: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+      margin: 40px;
+      max-width: 1200px;
+      width: 100%;
+      justify-content: space-between;
+      margin-top: 110px;
+    }
+
+    .box {
+      background-color: var(--box);
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      padding: 25px;
+      flex: 1;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      color: var(--highlight);
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .image-preview {
+      background-color: var(--bg);
+      border: 2px solid var(--highlight);
+      border-radius: 12px;
+      width: 400px;
+      height: 400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-preview img {
+      max-height: 350px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .timestamp {
+      font-size: 14px;
+      color: #94a3b8;
+      margin-bottom: 20px;
+      margin-top: -14px;
+    }
+
+    .risk-box {
+      background-color: var(--box);
+      border-radius: 12px;
+      padding: 15px 20px;
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+
+    .risk-box.low .risk-text,
+    .risk-box.low .icon {
+      color: var(--low);
+    }
+
+    .risk-box.medium .risk-text,
+    .risk-box.medium .icon {
+      color: var(--medium);
+    }
+
+    .risk-box.high .risk-text,
+    .risk-box.high .icon {
+      color: var(--high);
+    }
+
+    .progress-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .progress-container .label {
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .progress-bar-container {
+      flex-grow: 1;
+      height: 12px;
+      background-color: var(--bg);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      background-color: var(--highlight);
+      height: 100%;
+      transition: width 0.4s ease-in-out;
+    }
+
+    .progress-container .percentage {
+      font-weight: bold;
+      flex-shrink: 0;
+      min-width: 40px;
+      text-align: right;
+    }
+
+    .section h4 {
+      color: var(--medium);
+      font-size: 18px;
+    }
+
+    .solution-box {
+      background-color: var(--solution-bg);
+      color: var(--solution-text);
+      border-left: 5px solid var(--medium);
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    .scan-another-btn {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .scan-another-btn button {
+      background-color: var(--highlight);
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .scan-another-btn button:hover {
+      background-color: #2563eb;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+
+    ul.links{
+      margin-left: -35px;
+    }
