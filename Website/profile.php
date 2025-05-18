@@ -9,12 +9,10 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 
-// Handle profile update POST request
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_profile'])) {
   $name = trim($_POST['name']);
   $email = trim($_POST['email']);
 
-  // Simple validation
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $error = "Invalid email format.";
   } elseif (empty($name)) {
@@ -23,10 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_profile'])) {
     $stmt = $conn->prepare("UPDATE user_data SET name=?, email=? WHERE user_id=?");
     $stmt->bind_param("ssi", $name, $email, $user_id);
     if ($stmt->execute()) {
-      // Update session variables too
       $_SESSION['name'] = $name;
       $_SESSION['email'] = $email;
-      // Redirect to refresh page and show updated info
       header("Location: profile.php");
       exit();
     } else {
@@ -35,7 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_profile'])) {
   }
 }
 
-// Fetch latest user data
 $stmt = $conn->prepare("SELECT name, email FROM user_data WHERE user_id=?");
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
@@ -51,167 +46,10 @@ $email = htmlspecialchars($result['email']);
   <meta charset="UTF-8">
   <title>User Profile</title>
   <link rel="stylesheet" href="./css/navbar.css">
-  <style>
-    body {
-      
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0f172a;
-      color: #f1f5f9;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      margin-top:90px;
-    }
-
-    h1 {
-      text-align: left;
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-    .tabs {
-      grid-column: span 2;
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .tab {
-      background-color: #1e293b;
-      color: #cbd5e1;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .tab.active {
-      background-color: #3b82f6;
-      color: white;
-    }
-
-    .card {
-      background-color: #1e293b;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 18px;
-      margin-bottom: 16px;
-      font-weight: bold;
-    }
-
-    .edit-button, .submit-button {
-      background-color: #3b82f6;
-      color: white;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    .submit-button {
-      display: none; /* hidden initially */
-      background-color: #10b981;
-    }
-
-    .info-group {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 20px;
-    }
-
-    .avatar {
-      width: 60px;
-      height: 60px;
-      background-color: #3b82f6;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .input-group {
-      display: flex;
-      gap: 40px;
-      justify-content: flex-start;
-    }
-
-    .input-field {
-      width: 45%;
-    }
-
-    .input-field label {
-      display: block;
-      font-size: 14px;
-      margin-bottom: 6px;
-      color: #94a3b8;
-    }
-
-    .input-field input {
-      width: 100%;
-      padding: 10px;
-      background-color: #0f172a;
-      border: 1px solid #334155;
-      border-radius: 6px;
-      color: #fff;
-    }
-
-    .input-field input:disabled {
-      background-color: transparent;
-      border: none;
-      color: #cbd5e1;
-      cursor: default;
-    }
-
-    .account-actions {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    .danger {
-      background-color: #ef4444;
-      border: none;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .logout {
-      background-color: #334155;
-      color: #cbd5e1;
-      padding: 10px 20px;
-      border-radius: 6px;
-      border: none;
-      cursor: pointer;
-    }
-
-    .error {
-      color: #ef4444;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-    ul.links{
-      margin-left: -35px;
-    }
-  </style>
+  <link rel="stylesheet" href="./css/profile.css">
 </head>
 <body>
-   <nav>
+  <nav>
 <div class="navbar">
 <div class="nav-links">
 <ul class="links">
@@ -244,7 +82,9 @@ CitrusInsight AI
       <a href="user_dashboard.php"><button class="tab">Overview</button></a>
       <a href="scan_history.php"><button class="tab">Scan History</button></a>
       <button class="tab active">Profile</button>
-  </div>
+      <button class="theme-toggle" onclick="toggleTheme()">Toggle Mode</button>
+    </div>
+
     <div class="card">
       <div class="card-header">
         Profile Information
@@ -262,7 +102,7 @@ CitrusInsight AI
           <div class="avatar"><?= strtoupper(substr($name, 0, 2)) ?></div>
           <div>
             <p style="margin: 0; font-weight: bold;"><?= $name ?></p>
-            <p style="margin: 0; font-size: 14px; color: #cbd5e1;"><?= $email ?></p>
+            <p style="margin: 0; font-size: 14px; color: var(--profile-email);"><?= $email ?></p>
           </div>
         </div>
 
@@ -292,25 +132,40 @@ CitrusInsight AI
     </div>
   </div>
 
-<script>
-  const editBtn = document.getElementById('editBtn');
-  const submitBtn = document.getElementById('submitBtn');
-  const nameInput = document.getElementById('name');
-  const emailInput = document.getElementById('email');
+  <script>
+    const editBtn = document.getElementById('editBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
 
-  editBtn.addEventListener('click', () => {
-    nameInput.disabled = false;
-    emailInput.disabled = false;
+    editBtn.addEventListener('click', () => {
+      nameInput.disabled = false;
+      emailInput.disabled = false;
+      submitBtn.style.display = 'inline-block';
+      editBtn.style.display = 'none';
+      nameInput.focus();
+    });
 
-    submitBtn.style.display = 'inline-block';
-    editBtn.style.display = 'none';
-
-    nameInput.focus();
+    let mode = "light";
+const themeToggle = document.querySelector(".theme-toggle");
+ document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("light");
+      themeToggle.innerHTML = "Dark Mode";
+    });
+  function toggleTheme() {
+if (mode === "light") {
+        document.body.classList.add("dark");
+        themeToggle.innerHTML = "Light Mode";
+        mode = "dark";
+      } else {
+        document.body.classList.remove("dark");
+        themeToggle.innerHTML = "Dark Mode";
+        mode = "light";
+      }
+    };
+     document.querySelector(".logout-btn")?.addEventListener("click", () => {
+    window.open("logout.php", "_self");
   });
-  document.querySelector(".logout-btn").addEventListener("click", ()=> {
-window.open("logout.php", "_self");
-});
-</script>
-
+  </script>
 </body>
 </html>
