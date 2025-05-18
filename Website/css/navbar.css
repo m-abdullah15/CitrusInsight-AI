@@ -86,6 +86,7 @@ nav {
   }
   ul.links{
     margin: 4px;
+    margin-left:-15px;
   }
   .logout-btn {
     background: linear-gradient(135deg, #ff3b3b, #ff7b7b);
