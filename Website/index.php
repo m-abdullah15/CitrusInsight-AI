@@ -90,8 +90,8 @@
     <div class="text-section" style="max-width: 650px;">
       <h1>
         <span style="color:#2563eb; font-weight: bold;">Advance</span><br>
-        <strong style="color: #ffc400; font-weight: bold;">Disease Detection</strong><br>
-        <span style="color: #db2777; font-weight: bold;">AI Analysis</span>
+        <strong style="color: #ffc400; font-weight: bold;">Disease Detection System</strong><br>
+        <span style="color: #db2777; font-weight: bold;"></span>
       </h1>
       <p style="font-size: 15px; color: #374151; margin: 20px 0 30px; max-width: 500px;">
         Our cutting-edge AI technology analyzes leaf image with precision previously only achievable by specialists, detecting potential concerns in seconds.
