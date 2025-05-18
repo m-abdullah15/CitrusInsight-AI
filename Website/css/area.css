@@ -81,7 +81,7 @@ top: 20px;
 left: 30px;       /* Adjust based on sidebar width */
 background-color: #ff9800;
 color: white;
-margin-top: 4rem;
+margin-top: 5rem;
 border: none;
 padding: 10px 15px;
 cursor: pointer;
@@ -152,4 +152,8 @@ margin: 0;
 padding: 0;
 box-sizing: border-box;
 font-family: Arial, sans-serif;
+}
+.text{
+  font-weight: 600;
+  font-size: 1rem;
 }

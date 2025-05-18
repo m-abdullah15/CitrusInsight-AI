@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         datasets: [
           {
             label: "Production (tons)",
-            data: [500, 700, 800, 1000, 1200],
+            data: [2289262, 2300000, 2372119, 2372187, 2229520],
             borderColor: "#F39C12",
             backgroundColor: "rgba(243, 156, 18, 0.2)",
             tension: 0.4,
@@ -32,12 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
     new Chart(provinceProductionChartEl, {
       type: "bar",
       data: {
-        labels: ["Punjab", "Sindh", "Balochistan", "KPK"],
+        labels: ["Punjab", "Sindh", "Balochistan", "KPK", "Overall"],
 
         datasets: [
           {
             label: "Production (tons)",
-            data: [300, 200, 150, 100],
+            data: [2160411, 33677, 5946, 29486, 2229520],
             backgroundColor: ["#27AE60", "#F39C12", "#F1C40F", "#2C3E50"],
           },
         ],

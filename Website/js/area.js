@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
       datasets: [
           {
               label: "Area Distribution (%)",
-              data: [85,7,5,3],
+              data: [94.7,2.5,0.7,2.1],
               backgroundColor: ["#27AE60", "#F39C12", "#F1C40F", "#2C3E50"],
           },
       ],
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
               datasets: [
                   {
                       label: "Land Utilization (%)",
-                      data: [70, 30],
+                      data: [20.7,4.9],
                       backgroundColor: ["#27AE60", "#F39C12"],
                   },
               ],

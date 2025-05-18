@@ -133,3 +133,6 @@ body {
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
+#provinceContributionChart{
+  margin-bottom: 2rem;
+}
