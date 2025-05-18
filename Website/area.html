@@ -1,120 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Dashboards</title>
-  <link rel="stylesheet" href="../Website/css/area.css">
-	<link rel="stylesheet" href="../Website/css/progress.css">
-  <link rel="stylesheet" href="./css/navbar.css">
- 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboards</title>
+    <link rel="stylesheet" href="../Website/css/area.css" />
+    <link rel="stylesheet" href="../Website/css/progress.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
 
-</head>
-<body>
-  <!-- navbar  -->
-  <nav>
-    <div class="navbar">
-      <div class="nav-links">
-        <ul class="links">
-              <a href="#" class="logo">
-                  <img src="./assets/logo.png" alt="Citrus Insight AI Logo">
-                  CitrusInsight AI
-              </a>
-                <a href="./recommendation_system.html">
-                  <li><button class="nav-btn">Recommendation System</button></li>
-                </a>
-                <a href="./disease_detection.php"><li><button class="nav-btn">Disease Detection</button></li></a>
-                <a href="./dashboard.php"><li><button class="nav-btn">Trade Dashboard</button></li></a>
-                <a href="./yearly_planner_en.html">
-                <li><button class="nav-btn">Yearly Planner</button></li>
-                </a>
-                <a href="./fertilizer_schedule_en.html"><li><button class="nav-btn">Fertilizers Schedule</button></li></a> 
-                <a href="./index.php"><li>
-      <button class="logout-btn">
-          <svg class="logout-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 15L15 12L10 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M15 12H3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M20 4V20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          Logout
-      </button>
-  </li>
-  
-                </a>
-              </ul>
-          </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+  </head>
+  <body>
+    <!-- navbar  -->
+    <nav>
+      <div class="navbar">
+        <div class="nav-links">
+          <ul class="links">
+            <a href="#" class="logo">
+              <img src="./assets/logo.png" alt="Citrus Insight AI Logo" />
+              CitrusInsight AI
+            </a>
+            <a href="./recommendation_system.html">
+              <li><button class="nav-btn">Recommendation System</button></li>
+            </a>
+            <a href="./disease_detection.php"
+              ><li><button class="nav-btn">Disease Detection</button></li></a
+            >
+            <a href="./dashboard.php"
+              ><li><button class="nav-btn">Trade Dashboard</button></li></a
+            >
+            <a href="./yearly_planner_en.html">
+              <li><button class="nav-btn">Yearly Planner</button></li>
+            </a>
+            <a href="./fertilizer_schedule_en.html"
+              ><li><button class="nav-btn">Fertilizers Schedule</button></li></a
+            >
+            <a href="./index.php"
+              ><li>
+                <button class="logout-btn">
+                  <svg
+                    class="logout-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 15L15 12L10 9"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M15 12H3"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M20 4V20"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Logout
+                </button>
+              </li>
+            </a>
+          </ul>
         </div>
-      </nav>
-  <!-- navbar  -->
-	<div class="dashboard-page">
-  <!-- Sidebar -->
+      </div>
+    </nav>
+    <!-- navbar  -->
+    <div class="dashboard-page">
       <!-- Sidebar -->
-<div class="sidebar" id="sidebar">
-  <div class="sidebar-material">
-    <a href="./dashboard.php"><h2>Citrus Dashboard</h2></a>
-  <ul>
-    <li><a href="import-export.html" class="nav-link">Import-Export Data</a></li>
-    <li><a href="area.html" class="nav-link">Production Areas</a></li>
-    <li><a href="production.html" class="nav-link">Citrus Production</a></li>
-    <li><a href="index.php" class="nav-link exitbtn">⬅ Back to Home</a></li>
-  </ul>
-</div> 
-</div>
+      <!-- Sidebar -->
+      <div class="sidebar" id="sidebar">
+        <div class="sidebar-material">
+          <a href="./dashboard.php"><h2>Citrus Dashboard</h2></a>
+          <ul>
+            <li>
+              <a href="import-export.html" class="nav-link"
+                >Import-Export Data</a
+              >
+            </li>
+            <li><a href="area.html" class="nav-link">Production Areas</a></li>
+            <li>
+              <a href="production.html" class="nav-link">Citrus Production</a>
+            </li>
+            <li>
+              <a href="index.php" class="nav-link exitbtn">⬅ Back to Home</a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-<button id="toggleBtn" class="toggle-btn">☰</button>
-  
-  <!-- Main Content -->
-  <div class="dashboard-content areacontent">
-  <!-- Section: Production Areas -->
-  <section id="production-areas" class="dashboard-section">
-    <h2>Areas of Citrus Production in Pakistan</h2>
-    <p>
-      Detailed insights into regions dedicated to citrus farming across Pakistan.
-    </p>
-    <!-- filters -->
-     <div class="filter-section region">
-  <label for="region-filter">Region:</label>
-  <select id="region-filter">
-    <option value="all">All Regions</option>
-    <option value="punjab">Punjab</option>
-    <option value="sindh">Sindh</option>
-    <option value="balochistan">Balochistan</option>
-    <option value="kpk">KPK</option>
-  </select>
-</div>
-    <div class="chart-container areaDistribution-Chart">
-      <!-- Chart 1: Area Distribution -->
-      <canvas id="areaDistributionChart"></canvas>
-    </div>
-    <div class="chart-container areaUtilization-Chart">
-      <!-- Chart 2: Yearly Area Utilization -->
-      <canvas id="areaUtilizationChart"></canvas>
-    </div>
-    <!-- Area charts  -->
-     <div class="dashboard-section mapp">
-      <h2>Region-Wise Citrus Production Areas</h2>
-      <div id="map" class="chart-container"></div> <!-- Map will render here -->
-    </div>
-    
-    <div class="dashboard-section Comparison-chart">
-      <h2>Comparison of Citrus Production Areas</h2>
-          <div id="chart-container" class="area-chart">
-          <canvas id="areaChart"></canvas>
+      <button id="toggleBtn" class="toggle-btn">☰</button>
+
+      <!-- Main Content -->
+      <div class="dashboard-content areacontent">
+        <!-- Section: Production Areas -->
+        <section id="production-areas" class="dashboard-section">
+          <h2>Areas of Citrus Production in Pakistan</h2>
+          <p>
+            Detailed insights into regions dedicated to citrus farming across
+            Pakistan.
+          </p>
+          <!-- filters -->
+          <div class="filter-section region">
+            <label for="region-filter">Region:</label>
+            <select id="region-filter">
+              <option value="all">All Regions</option>
+              <option value="punjab">Punjab</option>
+              <option value="sindh">Sindh</option>
+              <option value="balochistan">Balochistan</option>
+              <option value="kpk">KPK</option>
+            </select>
+          </div>
+          <div class="chart-container areaDistribution-Chart">
+            <!-- Chart 1: Area Distribution -->
+            <canvas id="areaDistributionChart"></canvas>
+          </div>
+          <div class="chart-container areaUtilization-Chart">
+            <!-- Chart 2: Yearly Area Utilization -->
+            <canvas id="areaUtilizationChart"></canvas>
+          </div>
+          <!-- Area charts  -->
+          <div class="dashboard-section mapp">
+            <h2>Region-Wise Citrus Production Areas</h2>
+            <div id="map" class="chart-container" style="z-index: 0;"></div>
+            <!-- Map will render here -->
+          </div>
+
+          <div class="dashboard-section Comparison-chart">
+            <h2>Comparison of Citrus Production Areas</h2>
+            <div id="chart-container" class="area-chart">
+              <canvas id="areaChart"></canvas>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
-  </section>
-  </div>
-</div>
 
-
-<script src="../Website/js/progress.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="../Website/js/area.js"></script>
-
-</body>
+    <script src="../Website/js/progress.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../Website/js/area.js"></script>
+  </body>
 </html>
