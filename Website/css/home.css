@@ -362,6 +362,14 @@ body {
   gap: 30px;
   height: 448px;
 }
+.hero2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 40px;
+  gap: 30px;
+  height: 500px;
+}
 
 .hero-image img {
   width: 250px;
@@ -856,7 +864,7 @@ body {
 .logoimg {
   margin-top: 2rem;
   width: 15rem; /* Adjust logo size */
-  height: auto;
+  height: 100px;
   left: 10px;
 }
 
