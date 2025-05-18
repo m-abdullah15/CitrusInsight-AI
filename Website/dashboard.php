@@ -26,7 +26,8 @@
                 <a href="./yearly_planner_en.html">
                 <li><button class="nav-btn">Yearly Planner</button></li>
                 </a>
-                <a href="./fertilizer_schedule_en.html"><li><button class="nav-btn">Fertilizers Schedule</button></li></a> 
+                <a href="./fertilizer_schedule_en.html"><li><button class="nav-btn">Fertilizers Schedule</button></li></a>
+                <a href="./user_dashboard.php"><li><button class="nav-btn">User Dashboard</button></li></a>  
               <a href="./index.php"><li>
     <button class="logout-btn">
         <svg class="logout-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,7 +79,11 @@
 </div>
 </div>
 
-<script src="js/dashboard.js"></script>
+<script src="js/dashboard.js">
+document.querySelector(".logout-btn").addEventListener("click", ()=> {
+window.open("logout.php", "_self");
+});
+</script>
 <!-- <script src="../LoginSignup/assets/js/progress.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
