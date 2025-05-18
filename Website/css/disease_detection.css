@@ -1,119 +1,198 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
-body::before
-{
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    filter: blur(4px);
-    background: inherit;
-    z-index: -1;
-}
-
-
-
-input[type="file"] {
-    display: none;
-}
-
-.button-group {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.custom-file-upload{
-    padding: 12px 12px;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s;
-    border: none;
-    color: white;
-}
-
-
-#predictButton {
-    background-color: #007bff;
-}
-
-#predictButton:hover {
-    background-color: #0056b3;
-}
-
-h3.result {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #000000;
-    font-weight: bold;
-}
-.solution_heading{
-  background:#ff9901 ;
-  color: #ffffff;
-  padding: 5px;
-  border-radius: 6px;
-  margin-bottom: 8px;
-  margin-top: 8px;
-}
-.hide{
-    display: none;
-}
-
-#imagePreview {
-    width: 250px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-}
-
-#imagePreview::after {
-    content: "Upload Image";
-    position: absolute;
-    width: 250px;
-    height: 300px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    }
-.loader {
-    display: none; 
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #3498db;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
-    margin: 20px auto; 
+    :root {
+      --bg-color: #f0f4f8;
+      --text-color: #1e293b;
+      --card-bg: #ffffff;
+      --drop-bg:rgb(228, 235, 243);
+      --border-color: #cbd5e1;
+      --subtext-color: #475569;
+      --btn-bg: #2563eb;
+      --btn-hover: #1d4ed8;
     }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    body.dark {
+      --bg-color: rgb(15, 19, 34);
+      --text-color: white;
+      --card-bg: rgb(24, 28, 48);
+      --drop-bg:rgb(30, 37, 65);
+      --border-color: #4b5563;
+      --subtext-color: #9ca3af;
+      --btn-bg: #152f55;
+      --btn-hover: #374151;
     }
-.container{
-      margin-top: 5rem;
-}
-.full-container{
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: row;
-  }
-.hidden{
-display: none;
-}
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      margin-top: 70px;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    h1 {
+      font-size: 32px;
+      color: #c084fc;
+      margin: 0;
+    }
+
+    h1 span {
+      color: #ff7300;
+    }
+
+    .theme-toggle {
+      background-color: var(--btn-bg);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-left: 300px;
+    }
+
+    .description {
+      color: var(--subtext-color);
+      margin-top: 15px;
+      margin-bottom: 30px;
+    }
+
+    .upload-section {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 30px;
+      margin-top: 40px;
+      box-shadow: 0 10px 30px rgba(126, 122, 122, 0.3);
+    }
+
+    .upload-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .upload-header h2 {
+      font-size: 30px;
+      margin: 0;
+      color: var(--text-color);
+    }
+
+    .upload-subtext {
+      color: var(--subtext-color);
+      font-size: 14px;
+      margin-top: 8px;
+      margin-bottom: 20px;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .btn {
+      background-color: var(--btn-bg);
+      border: 1px solid var(--border-color);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn:hover {
+      background-color: var(--btn-hover);
+    }
+
+    .drop-area {
+      padding: 58px 20px;
+      text-align: center;
+      border-radius: 12px;
+      color: var(--subtext-color);
+      background-color: var(--drop-bg);
+      margin-top: 20px;
+    }
+
+    .upload-icon {
+      background-color: #1e40af;
+      border-radius: 50%;
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulse 2s infinite;
+    }
+
+    .upload-icon svg {
+      width: 30px;
+      height: 30px;
+      stroke: white;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255, 115, 0, 0.7); }
+      70% { box-shadow: 0 0 0 20px rgba(255, 115, 0, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 115, 0, 0); }
+    }
+
+    .browse-btn {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .browse-btn:hover {
+      background-color: #1d4ed8;
+    }
+
+    #loaderOverlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0c0f1aee;
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    .branded-loader {
+      border: 10px solid #1e40af;
+      border-top: 10px solid #ff7300;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      animation: spin 1s linear infinite;
+    }
+    ul.links{
+      margin-left:-40px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
