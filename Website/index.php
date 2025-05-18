@@ -112,7 +112,7 @@ Empower your orchard with fast, reliable, and intelligent plant health
         Pakistan homeowners who enjoy growing fresh citrus fruit in their
         yards, and Pakistan farmers tending to $800 million worth of citrus
         fruit trees must work together to protect their trees. Learn more about
-        <a href="#">how to detect the pest and disease</a> and protect Pakistan’s
+        <a href="https://aari.punjab.gov.pk/Cit-Dis#:~:text=Symptoms%20include%20rotted%20roots%3B%20cracked,and%20death%20of%20the%20tree.">how to detect the pest and disease</a> and protect Pakistan’s
         beloved citrus heritage.
       </p>
     </div>
@@ -124,12 +124,12 @@ Empower your orchard with fast, reliable, and intelligent plant health
       <h1>Protect Your Citrus Trees</h1>
       <p>
         The Citrus Pest & Disease Prevention Program recommends these 
-        <a href="#" class="hero-link">tips to protect citrus trees</a>.
+        <a href="https://www.groworganic.com/blogs/articles/the-sunlight-sensitivity-of-citrus-trees-and-how-to-protect-them" class="hero-link">tips to protect citrus trees</a>.
       </p>
       <ul>
         <li>
           Inspect trees for the 
-          <a href="#" class="hero-link">Asian citrus psyllid and Huanglongbing</a> 
+          <a href="https://californiacitrusthreat.org/pest-disease/" class="hero-link">Asian citrus psyllid and Huanglongbing</a> 
           monthly, and whenever watering, spraying, pruning or tending trees. If the disease is spotted, call the CDFA hotline at 800-491-1899 immediately.
         </li>
         <li>
@@ -152,7 +152,9 @@ Empower your orchard with fast, reliable, and intelligent plant health
           If you no longer wish to care for your citrus tree, consider removing it so it does not become a host to the pest or disease.
         </li>
       </ul>
+      <a href="https://aari.punjab.gov.pk/Cit-Dis#:~:text=Symptoms%20include%20rotted%20roots%3B%20cracked,and%20death%20of%20the%20tree.">
       <button class="hero-btn">Learn More</button>
+      </a>
     </div>
   </div>
 </div>
@@ -162,10 +164,11 @@ Empower your orchard with fast, reliable, and intelligent plant health
     <div class="hero-contenttt">
       <h1>Pakistan: Rich in Citrus Heritage</h1>
       <p>
-        Pakistan is enjoying the 13th position among  top  15  citrus  producing countries  (FAO,  2013).  In  Pakistan  citrus  production  is spreading  on  an  area  of  approximately  200,000  hectares producing  a  yield  of  over  2  million  tons  per  year (Anonymous,  2011),  production  mainly  concentrated  in provinces  of  Punjab  and  Khyber  Pakhtunkhwa  (KP).
-        <a href="#" class="hero-link">Pest & Disease page</a>.
+        Pakistan is enjoying the 13th position among  top  15  citrus  producing countries  (FAO,  2021).  In  Pakistan  citrus  production  is spreading  on  an  area  of  approximately  200,000  hectares producing  a  yield  of  over <strong style="color:chocolate">2.32  million  tons  per  year (Report linker, 2021)</strong>,  production  mainly  concentrated  in provinces  of  Punjab  and  Khyber  Pakhtunkhwa  (KP).
       </p>
+      <a href="https://www.reportlinker.com/clp/country/470135/726402#:~:text=Key%20Market%20Indicators&text=Pakistan%20is%20currently%20ranked%2015th,million%20metric%20tons%20in%202021.">
       <button class="hero-btn">Learn More</button>
+      </a>
     </div>
     <div class="hero-image-3">
       <img src="https://www.researchgate.net/profile/Zahid-Ali-7/publication/306327677/figure/fig1/AS:397267648434179@1471727396447/Major-Citrus-Producing-Districts-in-Punjab-Khyber-Pakhtunkhwa-KP-Balochistan-and.png" alt="California Citrus Map" />
@@ -449,10 +452,10 @@ Empower your orchard with fast, reliable, and intelligent plant health
     <div>
       <h3 class="text-xl font-semibold mb-4 text-orange-600">Discover</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="#" class="hover:text-orange-500">Recommendation System</a></li>
-        <li><a href="#" class="hover:text-orange-500">Disease Detection</a></li>
-        <li><a href="#" class="hover:text-orange-500">Yearly Planner</a></li>
-        <li><a href="#" class="hover:text-orange-500">Dashboard</a></li>
+        <li><a href="login.php" class="hover:text-orange-500">Recommendation System</a></li>
+        <li><a href="login.php" class="hover:text-orange-500">Disease Detection</a></li>
+        <li><a href="login.php" class="hover:text-orange-500">Yearly Planner</a></li>
+        <li><a href="login.php" class="hover:text-orange-500">Dashboard</a></li>
       </ul>
     </div>
 
