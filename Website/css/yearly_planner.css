@@ -17,9 +17,6 @@ body {
     margin-top: 5rem;
 }
 
-.container:hover {
-    transform: scale(1.01); 
-}
 
 .header {
     font-size: 36px;
@@ -108,6 +105,7 @@ body {
   font-size: 1.5rem;
   font-weight: 600;
   color: #ff7b7b;
+  margin-bottom: 1.5rem;
 }
 
 /* Toggle Switch */
