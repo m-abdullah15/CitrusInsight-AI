@@ -17,219 +17,41 @@ $model_name = $_SESSION['model_name'];
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="./css/navbar.css">
   <link rel="stylesheet" href="./css/disease_detection.css">
-  <style>
-    body {
-      background-color:rgb(15, 19, 34);
-      color: white;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 40px;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      margin-top: 70px;
-    }
-
-    h1 {
-      font-size: 32px;
-      color: #c084fc;
-    }
-
-    h1 span {
-      color: #ff7300;
-    }
-
-    .description {
-      color: #9ca3af;
-      margin-top: 15px;
-      margin-bottom: 30px;
-    }
-
-    .upload-section {
-      background-color:rgb(24, 28, 48);
-      border-radius: 12px;
-      padding: 30px;
-      margin-top: 40px;
-      box-shadow: 0 10px 30px rgba(126, 122, 122, 0.3);
-    }
-
-    .upload-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .upload-header h2 {
-      font-size: 30px;
-      margin: 0;
-      color: white;
-    }
-
-    .upload-subtext {
-      color: #9ca3af;
-      font-size: 14px;
-      margin-top: 8px;
-      margin-bottom: 20px;
-    }
-
-    .button-group {
-      display: flex;
-      gap: 10px;
-    }
-
-    .btn {
-      background-color: #152f55;
-      border: 1px solid #4b5563;
-      color: #f9fafb;
-      padding: 8px 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .btn:hover {
-      background-color: #374151;
-    }
-
-    .drop-area {
-      padding: 58px 20px;
-      text-align: center;
-      border-radius: 12px;
-      color: #9ca3af;
-      background-color:rgb(34, 46, 66);
-      margin-top: 20px;
-    }
-
-    .upload-icon {
-      background-color: #1e40af;
-      border-radius: 50%;
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .upload-icon svg {
-      width: 30px;
-      height: 30px;
-      stroke: white;
-
-    }
-
-    @keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(255, 115, 0, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 20px rgba(255, 115, 0, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(255, 115, 0, 0);
-  }
-}
-
-.upload-icon {
-  animation: pulse 2s infinite;
-  transition: transform 0.3s ease;
-}
-
-
-    .browse-btn {
-      background-color: #2563eb;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 20px;
-      font-size: 14px;
-    }
-
-    .browse-btn:hover {
-      background-color: #1d4ed8;
-    }
-
-    /* Loader overlay */
-    #loaderOverlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #0c0f1aee;
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
-      opacity: 1;
-      transition: opacity 0.5s ease;
-    }
-
-    .branded-loader {
-      border: 10px solid #1e40af;
-      border-top: 10px solid #ff7300;
-      border-radius: 50%;
-      width: 80px;
-      height: 80px;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-     ul.links{
-      margin-left: 0px;
-    }
-  </style>
 </head>
 <body>
-  <nav>
-    <div class="navbar">
-      <div class="nav-links">
-        <ul class="links">
-              <a href="#" class="logo">
-                  <img src="./assets/logo.png" alt="Citrus Insight AI Logo">
-                  CitrusInsight AI
-              </a>
-                <a href="./recommendation_system.html">
-                  <li><button class="nav-btn">Recommendation System</button></li>
-                </a>
-                <a href="./disease_detection.php"><li><button class="nav-btn">Disease Detection</button></li></a>
-                <a href="./dashboard.php"><li><button class="nav-btn">Trade Dashboard</button></li></a>
-                <a href="./yearly_planner_en.html">
-                <li><button class="nav-btn">Yearly Planner</button></li>
-                </a>
-                <a href="./fertilizer_schedule_en.html"><li><button class="nav-btn">Fertilizers Schedule</button></li></a>
-                <a href="./user_dashboard.php"><li><button class="nav-btn">User Dashboard</button></li></a>  
-                <a href="./index.php"><li>
-      <button class="logout-btn">
-          <svg class="logout-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 15L15 12L10 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M15 12H3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M20 4V20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          Logout
-      </button>
-  </li>
-  
-                </a>
-              </ul>
-          </div>
-        </div>
-      </nav>
-  
-
+   <nav>
+<div class="navbar">
+<div class="nav-links">
+<ul class="links">
+<div class="logo">
+<img src="./assets/logo.png" alt="Citrus Insight AI Logo">
+CitrusInsight AI
+</div>
+<a href="./recommendation_system.html"><li><button class="nav-btn">Recommendation System</button></li></a>
+<a href="./disease_detection.php"><li><button class="nav-btn">Disease Detection</button></li></a>
+<a href="./dashboard.php"><li><button class="nav-btn">Trade Dashboard</button></li></a>
+<a href="./yearly_planner_en.html"><li><button class="nav-btn">Yearly Planner</button></li></a>
+<a href="./fertilizer_schedule_en.html"><li><button class="nav-btn">Fertilizers Schedule</button></li></a>
+<a href="./user_dashboard.php"><li><button class="nav-btn">User Dashboard</button></li></a> 
+<a href="./index.php"><li><button class="logout-btn">
+<svg class="logout-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 15L15 12L10 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 12H3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20 4V20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>Logout</button>
+</li>
+</a>
+</ul>
+</div>
+</div>
+</nav>
   <div class="container">
-    <h1>AI-Powered <span>Citrus Disease Detection</span></h1>
+    <div class="header-container">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <h1>AI-Powered <span>Citrus Disease Detection</span></h1>
+        <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+      </div>
+    </div>
     <p class="description">Our advanced AI analyzes your Citrus Plant with 95.8% accuracy in seconds</p>
 
     <div class="upload-section">
@@ -259,14 +81,30 @@ $model_name = $_SESSION['model_name'];
     </div>
   </div>
 
-  <!-- Branded Loader Overlay -->
   <div id="loaderOverlay">
     <div class="branded-loader"></div>
     <p style="margin-top: 20px; font-size: 18px; color: #c084fc; font-weight: 600;">Analyzing Leaf... Please wait</p>
   </div>
 
   <script>
-    // Button triggers
+    let mode = "light";
+    let themeToggle = document.querySelector(".theme-toggle");
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("light");
+      themeToggle.innerHTML = "Dark Mode";
+    });
+    function toggleTheme() {
+      if (mode === "light") {
+        document.body.classList.add("dark");
+        themeToggle.innerHTML = "Light Mode";
+        mode = "dark";
+      } else {
+        document.body.classList.remove("dark");
+        themeToggle.innerHTML = "Dark Mode";
+        mode = "light";
+      }
+    }
+
     document.getElementById("captureButton").addEventListener("click", () => {
       document.getElementById("cameraInput").click();
     });
@@ -279,7 +117,6 @@ $model_name = $_SESSION['model_name'];
       document.getElementById("fileInput").click();
     });
 
-    // Auto prediction after file selection
     document.getElementById("fileInput").addEventListener("change", () => {
       predictDisease();
     });
@@ -288,15 +125,14 @@ $model_name = $_SESSION['model_name'];
       predictDisease();
     });
 
-    // Drag & drop
     const dropArea = document.querySelector(".drop-area");
     dropArea.addEventListener("dragover", (e) => {
       e.preventDefault();
-      dropArea.style.backgroundColor = "#334155";
+      dropArea.style.backgroundColor = "#dbeafe";
     });
 
     dropArea.addEventListener("dragleave", () => {
-      dropArea.style.backgroundColor = "#1e293b";
+      dropArea.style.backgroundColor = "var(--drop-bg)";
     });
 
     dropArea.addEventListener("drop", (e) => {
@@ -308,15 +144,12 @@ $model_name = $_SESSION['model_name'];
       }
     });
 
-    // Disease prediction logic
     async function predictDisease() {
       const fileInput = document.getElementById("fileInput").files[0] || document.getElementById("cameraInput").files[0];
       if (!fileInput) {
         alert("Please select an image!");
         return;
       }
-
-      // Show loader
       const loader = document.getElementById("loaderOverlay");
       loader.style.display = "flex";
       loader.style.opacity = "1";
@@ -332,7 +165,6 @@ $model_name = $_SESSION['model_name'];
           const predictedClass = result.data[0];
           const Confidence = parseFloat(result.data[1]);
 
-          // Send to backend
           const formData = new FormData();
           formData.append('predicted_class', predictedClass);
           formData.append('confidence_score', Confidence);
@@ -347,7 +179,6 @@ $model_name = $_SESSION['model_name'];
               try {
                 const data = JSON.parse(raw);
                 if (data.status === "success") {
-                  // Delay then fade out and redirect
                   setTimeout(() => {
                     loader.style.opacity = "0";
                     setTimeout(() => {
@@ -365,15 +196,11 @@ $model_name = $_SESSION['model_name'];
 
         } catch (error) {
           console.error("Prediction error:", error);
-          alert("⚠️ Error in prediction!");
+          alert("\u26A0\uFE0F Error in prediction!");
           loader.style.display = "none";
         }
       };
     }
-
-    document.querySelector(".logout-btn").addEventListener("click", () => {
-      window.open("logout.php", "_self");
-    });
   </script>
 </body>
 </html>
