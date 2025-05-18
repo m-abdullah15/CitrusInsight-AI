@@ -22,15 +22,23 @@
    <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
+  .logooo-flex img{
+    height: 130px;
+    width: 130px;
+  }
   .logooo {
   position: relative; /* Needed for background image */
   background-image: url("./assets/images/background.jpg"); /* Add your image path */
   background-size: cover; /* Cover full area */
   background-position: center; /* Center the background */
   background-repeat: no-repeat;
-  height: auto; /* Adjust height based on content */
+  height: 210px; /* Adjust height based on content */
   width: 100%;
   padding: 2rem 0; /* Add some padding */
+}
+.text-section h1{
+  font-size:45px;
+  font-weight: bold;
 }
 </style>
    </head>
@@ -77,25 +85,54 @@
     </div>
   </nav>
   </header>
-  <main class="hero" style="background-color:#FFE5B4	;">
-    <div class="disease-image">
-      <a href="login.php"><img src="./assets/images/disease-logo.jpg" alt="Orange Slice" ></a>
+  <main class="hero2" style="background-color:#F8F4E1; padding: 60px 150px;">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; width: 100%;">
+    <div class="text-section" style="max-width: 650px;">
+      <h1>
+        <span style="color:#2563eb; font-weight: bold;">Next-Gen</span><br>
+        <strong style="color: #ffc400; font-weight: bold;">Disease Detection</strong><br>
+        <span style="color: #db2777; font-weight: bold;">AI Analysis</span>
+      </h1>
+      <p style="font-size: 15px; color: #374151; margin: 20px 0 30px; max-width: 500px;">
+        Our cutting-edge AI technology analyzes leaf image with precision previously only achievable by specialists, detecting potential concerns in seconds.
+      </p>
+      <div style="display: flex; gap: 15px;">
+        <a href="login.php"><button style="padding: 12px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; background-color: #2563eb; color: white; border: none;">Analyze Your Image</button></a>
+        <a href="login.php"><button style="padding: 12px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; background-color: white; color: #2563eb; border: 2px solid #2563eb;">Recommendation-System</button></a>
+      </div>
     </div>
-    <div class="hero-content" >
-      <h2><a href="login.php">CitrusInsight AI Citrus Disease Detection</a></h2>
-      <p>
-CitrusInsight AI is an advanced web-based tool designed
- to detect and classify citrus leaf diseases using artificial
-  intelligence. By uploading a photo of a citrus leaf, users receive
-   instant and accurate predictions of common diseases affecting citrus
-   crops. Our AI model analyzes features such as spots, discoloration, 
-   and leaf damage to assist farmers in early diagnosis and effective disease
-    management.
 
-Empower your orchard with fast, reliable, and intelligent plant health
- insights — all in one click.</p>
+    <div class="card" style="background-color: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); width: 400px; padding: 25px 30px; color: #1e293b; position: relative;">
+      <div style="display: flex; gap: 8px; margin-bottom: 15px;">
+        <div style="width: 10px; height: 10px; border-radius: 50%; background-color: #ef4444;"></div>
+        <div style="width: 10px; height: 10px; border-radius: 50%; background-color: #eab308;"></div>
+        <div style="width: 10px; height: 10px; border-radius: 50%; background-color: #22c55e;"></div>
+      </div>
+      <div style="font-weight: 600; font-size: 16px; margin-bottom: 15px;">AI Analysis</div>
+      <div style="background-color: #f3f4f6; border-radius: 10px; height: 140px; display: flex; align-items: center; justify-content: center; font-size: 30px; margin-bottom: 25px; color: #6b7280;">📷</div>
+      <div style="display: flex; justify-content: space-between; gap: 5px; margin-bottom: 25px;">
+        <div style="width: 150px;">
+          <p style="font-size: 13px; margin: 0; color: #041224;">Probability</p>
+          <h2 style="font-size: 16px; margin: 6px 0;">95.6%</h2>
+          <div style="height: 6px; background-color: #334155; border-radius: 4px; overflow: hidden;">
+            <div style="height: 100%; background-color: #3b82f6; width: 94.6%;"></div>
+          </div>
+        </div>
+        <div style="width: 150px;">
+          <p style="font-size: 13px; margin: 0; color: #041224;">Severity</p>
+          <h2 style="font-size: 16px; margin: 6px 0; color: #fbbf24;">High</h2>
+          <div style="height: 6px; background-color: #334155; border-radius: 4px; overflow: hidden;">
+            <div style="height: 100%; background-color: #fbbf24; width: 90%;"></div>
+          </div>
+        </div>
+      </div>
+      <a href="login.php"><div style="background-color: #2563eb; color: white; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; transition: background-color 0.3s; cursor: pointer;">
+        View Full Report
+      </div></a>
     </div>
-  </main>
+  </div>
+</main>
+
   <!-- gpt  -->
  <main class="hero" style="background-color:#FFD580;">
     <div class="hero-image">
