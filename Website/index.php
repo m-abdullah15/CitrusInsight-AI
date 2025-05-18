@@ -127,7 +127,7 @@
         </div>
       </div>
       <a href="login.php"><div style="background-color: #2563eb; color: white; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; transition: background-color 0.3s; cursor: pointer;">
-        View Full Report
+        View Analysis
       </div></a>
     </div>
   </div>
