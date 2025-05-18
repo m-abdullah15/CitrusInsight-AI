@@ -42,231 +42,11 @@ $timestamp = date('d M Y, h:i A', strtotime($row['time']));
   <meta charset="UTF-8" />
   <title>Scan Details</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="./css/navbar.css" />
-  <link rel="stylesheet" href="./css/navbar.css">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0f172a;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    header {
-      width: 100%;
-      background-color: #1e293b;
-      padding: 20px;
-      text-align: center;
-      font-size: 24px;
-      color: rgb(255, 255, 255);
-      font-weight: bold;
-    }
-
-    .container {
-      display: flex;
-      flex-direction: row;
-      gap: 50px;
-      margin: 40px;
-      max-width: 1200px;
-      width: 100%;
-      justify-content: space-between;
-      margin-top: 110px;
-    }
-
-    .box {
-      background-color: rgb(27, 37, 54);
-      border-radius: 12px;
-      border: 2px solid #1e293b;
-      padding: 25px;
-      flex: 1;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    h2 {
-      margin-bottom: 20px;
-      color: #3b82f6;
-    }
-    .box h2 {
-      color: white;
-      font-weight: bold;
-      font-size: 30px;
-    }
-    .image-preview {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #0f172a;
-      border: 2px solid #3b82f6;
-      border-radius: 12px;
-      overflow: hidden;
-      width: 400px;
-      height: 400px;
-      margin: 0 auto;
-    }
-
-    .image-preview img {
-      max-height: 350px;
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-      border-radius: 8px;
-    }
-
-    .timestamp {
-      font-size: 14px;
-      color: #94a3b8;
-      margin-bottom: 20px;
-      margin-top: -14px;
-    }
-
-    .risk-box {
-      background-color: #1e293b;
-      border-radius: 12px;
-      padding: 15px 20px;
-      position: relative;
-      border: 1px solid #334155;
-      margin-bottom: 20px;
-      color: #f8fafc;
-      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-    }
-
-    .risk-box .icon {
-      margin-right: 10px;
-      font-size: 18px;
-      vertical-align: middle;
-    }
-
-    .risk-box .risk-text {
-      font-weight: bold;
-      font-size: 16px;
-      color: inherit;
-    }
-
-    /* Updated progress bar container with flex layout */
-    .progress-container {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    .progress-container .label {
-      white-space: nowrap;
-      font-weight: bold;
-      color: #fff;
-      flex-shrink: 0;
-    }
-
-    .progress-bar-container {
-      flex-grow: 1;
-      height: 12px;
-      background-color: #0f172a;
-      border-radius: 20px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .progress-bar-fill {
-      background-color: #3b82f6;
-      height: 100%;
-      transition: width 0.4s ease-in-out;
-    }
-
-    .progress-container .percentage {
-      white-space: nowrap;
-      font-weight: bold;
-      color: #fff;
-      flex-shrink: 0;
-      min-width: 40px;
-      text-align: right;
-    }
-
-    .risk-box.low .risk-text,
-    .risk-box.low .icon {
-      color: #10b981;
-    }
-
-    .risk-box.medium .risk-text,
-    .risk-box.medium .icon {
-      color: #fbbf24;
-    }
-
-    .risk-box.high .risk-text,
-    .risk-box.high .icon {
-      color: #ef4444;
-    }
-
-    .section {
-      margin-top: 20px;
-    }
-
-    .section h4 {
-      font-size: 18px;
-      margin-bottom: 8px;
-      color: #fbbf24;
-    }
-
-    .solution-box {
-      background-color: #0f172a;
-      border-left: 5px solid #fbbf24;
-      padding: 15px;
-      border-radius: 8px;
-      font-size: 15px;
-      color: #e2e8f0;
-    }
-    a {
-      color: #3b82f6;
-    }
-    .back-btn {
-      margin-top: 10px;
-      text-align: right;
-    }
-
-    .back-btn a {
-      color: #3b82f6;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
-    }
-    .scan-another-btn {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.scan-another-btn button {
-  background-color: #3b82f6;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.scan-another-btn button:hover {
-  background-color: #2563eb;
-}
-
-    ul.links{
-      margin-left: -35px;
-    }
-  </style>
+  <link rel="stylesheet" href="./css/navbar.css"/>
+  <link rel="stylesheet" href="./css/view.css">
 </head>
 <body>
- <nav>
+  <nav>
 <div class="navbar">
 <div class="nav-links">
 <ul class="links">
@@ -294,6 +74,7 @@ CitrusInsight AI
 </nav>
 
   <div class="container">
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Mode</button>
     <!-- Image Container -->
     <div class="box">
       <h2>Image Scanned</h2>
@@ -310,7 +91,7 @@ CitrusInsight AI
 
     <!-- Analysis Container -->
     <div class="box">
-      <h2>Analysis Result</h2>
+      <h2>Analysis Result</h2> 
       <div class="timestamp">Scanned on: <?= $timestamp ?></div>
 
       <div class="section">
@@ -371,6 +152,23 @@ solution.innerHTML = "<ul><li>Check for nutrient deficiencies and correct fertil
 } else {
 solution.innerHTML = "Solution not available for this disease.";
 }
+let mode = "light";
+const themeToggle = document.querySelector(".theme-toggle");
+ document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("light");
+      themeToggle.innerHTML = "Dark Mode";
+    });
+  function toggleTheme() {
+if (mode === "light") {
+        document.body.classList.add("dark");
+        themeToggle.innerHTML = "Light Mode";
+        mode = "dark";
+      } else {
+        document.body.classList.remove("dark");
+        themeToggle.innerHTML = "Dark Mode";
+        mode = "light";
+      }
+    };
 document.querySelector(".logout-btn").addEventListener("click", ()=> {
 window.open("logout.php", "_self");
 });
