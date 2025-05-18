@@ -10,6 +10,9 @@
         ul.links{
           margin-left: 34%;
         }
+        nav .navbar .logo {
+          margin-left: 20px;
+        }
        </style>
   </head>
   <body>
@@ -32,8 +35,8 @@
               <li><button class="nav-btn">Yearly Planner</button></li>
             </a>
             <a href="./fertilizer_schedule_en.html"
-              ><li><button class="nav-btn">Fertilizers Schedule</button></li></a
-            >
+              ><li><button class="nav-btn">Fertilizers Schedule</button></li></a>
+              <a href="./user_dashboard.php"><li><button class="nav-btn">User Dashboard</button></li></a> 
             <a href="./index.php"
               ><li>
                 <button class="logout-btn">
@@ -453,6 +456,9 @@
           }
         });
       });
+      document.querySelector(".logout-btn").addEventListener("click", ()=> {
+window.open("logout.php", "_self");
+});
     </script>
   </body>
 </html>
