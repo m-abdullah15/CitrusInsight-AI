@@ -6,6 +6,11 @@
     <title>Citrus Recommendation System</title>
     <link rel="stylesheet" href="./css/recommendation_system.css">
     <link rel="stylesheet" href="./css/navbar.css">
+    <style>
+        ul.links{
+      margin-left: -35px;
+    }
+    </style>
 </head>
 <body>
     <nav>
@@ -21,6 +26,7 @@
                     <a href="./dashboard.php"><li><button class="nav-btn">Trade Dashboard</button></li></a>
                     <a href="./yearly_planner_en.html"><li><button class="nav-btn">Yearly Planner</button></li></a>
                     <a href="./fertilizer_schedule_en.html"><li><button class="nav-btn">Fertilizers Schedule</button></li></a> 
+                    <a href="./user_dashboard.php"><li><button class="nav-btn">User Dashboard</button></li></a> 
                     <a href="./index.php"><li><button class="logout-btn">
               <svg class="logout-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10 15L15 12L10 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -403,6 +409,10 @@
 
 </div>
     <!-- addtional information  -->
-    <script src="./js/recommendation_system.js"></script>
+    <script src="./js/recommendation_system.js">
+        document.querySelector(".logout-btn").addEventListener("click", ()=> {
+window.open("logout.php", "_self");
+});
+    </script>
 </body>
 </html>
