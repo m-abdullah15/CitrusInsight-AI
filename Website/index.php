@@ -89,7 +89,7 @@
   <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; width: 100%;">
     <div class="text-section" style="max-width: 650px;">
       <h1>
-        <span style="color:#2563eb; font-weight: bold;">Next-Gen</span><br>
+        <span style="color:#2563eb; font-weight: bold;">Advance</span><br>
         <strong style="color: #ffc400; font-weight: bold;">Disease Detection</strong><br>
         <span style="color: #db2777; font-weight: bold;">AI Analysis</span>
       </h1>
