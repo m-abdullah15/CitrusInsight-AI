@@ -62,33 +62,24 @@ if (!isset($_SESSION['user_id'])) {
   </div>
   <button id="closeSidebar" class="close-btn">✖</button>
 </div>
-<div class="container enhanced-detection">
-  <h2 class="section-title">🍊 Citrus Disease Detection</h2>
-
-  <div class="card-detection">
-    <img id="imagePreview" src="../Website/assets/images/placeholder.jpg" alt="Image Preview" class="image-preview" />
-
-    <div class="button-group">
-      <label class="custom-file-upload" id="captureButton">📸 Take Photo</label>
-      <label class="custom-file-upload" id="selectButton">📂 Choose from Storage</label>
-      <input type="file" id="cameraInput" accept="image/*" capture="environment" style="display: none;">
-      <input type="file" id="fileInput" accept="image/*" style="display: none;">
-      <button id="predictButton">🔍 Predict</button>
+    <div class="container">
+        <h2>🍊 Citrus Disease Detection</h2>
+        <br>
+        <img id="imagePreview" src="../Website/assets/images/placeholder.jpg" alt="Image Preview">
+        <br>
+        <div class="button-group">
+            <label class="custom-file-upload" id="captureButton">📸 Take Photo</label>
+            <label class="custom-file-upload" id="selectButton">📂 Choose from Storage</label>
+            <input type="file" id="cameraInput" accept="image/*" capture="environment" style="display: none;">
+            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+            <button id="predictButton">🔍 Predict</button>
+        </div>        
+        <div class="loader" id="loader"></div>
+        <h3 class="result"><span id="result"></span></h3>
+        <h3 class="result"><span id="confidence"></span></h3>
+        <h3 class="solution_heading hide">Solution:</h3>
+        <strong class="solution"></strong>
     </div>
-
-    <div class="loader" id="loader"></div>
-
-    <div class="result-area">
-  <h3 class="result"><span id="result"></span></h3>
-  <h3 class="result"><span id="confidence"></span></h3>
-
-  <div class="solution-card hide" id="solutionCard">
-    <h3>🩺 Suggested Solution:</h3>
-    <strong id="solutionText"></strong>
-  </div>
-</div>
-  </div>
-</div>
     </div>
     <script>
 let name = "<?php echo $name; ?>";
@@ -207,28 +198,20 @@ async function predictDisease() {
 const formData = new FormData();
 formData.append('predicted_class', predictedClass);
 formData.append('confidence_score', Confidence);
-formData.append('image', fileInput);
 
 fetch('save_disease_result.php', {
     method: 'POST',
     body: formData
 })
-.then(response => response.text()) // Use text first
-.then(raw => {
-    console.log("Raw response:", raw); // Log what PHP returned
-    try {
-        const data = JSON.parse(raw); // Try to parse as JSON
-        if (data.status === "success") {
-            console.log("Report saved to database");
-        } else {
-            console.error("Failed to save report:", data.message);
-        }
-    } catch (e) {
-        console.error("Error parsing JSON:", e, raw);
+.then(response => response.json())
+.then(data => {
+    if (data.status === "success") {
+        console.log("Report saved to database");
+    } else {
+        console.error("Failed to save report:", data.message);
     }
 })
-.catch(error => console.error("Fetch error:", error));
-
+.catch(error => console.error("Error:", error));
 
                 } catch (error) {
                     console.error("Error:", error);
