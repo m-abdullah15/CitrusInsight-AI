@@ -10,8 +10,7 @@ $name = $_SESSION['name'];
 $email = $_SESSION['email'];
 $user_id = $_SESSION['user_id'];
 
-// Fetch all scans for this user
-$scan_sql = "SELECT report_id,prediction_result, confidence_score, time FROM disease_report WHERE user_id = ? ORDER BY time DESC";
+$scan_sql = "SELECT report_id, prediction_result, confidence_score, time FROM disease_report WHERE user_id = ? ORDER BY time DESC";
 $stmt = $conn->prepare($scan_sql);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
@@ -25,119 +24,7 @@ $scans = $scan_result->fetch_all(MYSQLI_ASSOC);
   <title>Scan History - Citrus Insight</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="./css/navbar.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0f172a;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    header {
-      width: 100%;
-      text-align: center;
-      padding: 20px 0;
-      font-size: 24px;
-      font-weight: bold;
-      background-color: #1e293b;
-      color: #3b82f6;
-    }
-
-    .container {
-      max-width: 1000px;
-      width: 100%;
-      padding: 20px;
-      margin-top:90px;
-    }
-    .tabs {
-      grid-column: span 2;
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .tab {
-      background-color: #1e293b;
-      color: #cbd5e1;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .tab.active {
-      background-color: #3b82f6;
-      color: white;
-    }
-
-    h2 {
-      margin-bottom: 20px;
-      color: #3b82f6;
-    }
-
-    ul.scan-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul.scan-list li {
-      background-color: #1e293b;
-      margin-bottom: 12px;
-      padding: 15px;
-      border-radius: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .scan-info {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-    }
-
-    .scan-info i {
-      color: #3b82f6;
-      font-size: 20px;
-    }
-
-    .scan-details {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .scan-details strong {
-      font-size: 16px;
-    }
-
-    .scan-details small {
-      color: #94a3b8;
-      font-size: 13px;
-    }
-
-    .btn {
-      background-color: #3b82f6;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-
-    .back-link {
-      color: #3b82f6;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    ul.links{
-      margin-left: -35px;
-    }
-  </style>
+  <link rel="stylesheet" href="./css/scan_history.css">
 </head>
 <body>
   <nav>
@@ -173,8 +60,10 @@ CitrusInsight AI
       <a href="user_dashboard.php"><button class="tab">Overview</button></a>
       <button class="tab active">Scan History</button>
       <a href="profile.php"><button class="tab">Profile</button></a>
-  </div>
-  <ul class="scan-list">
+      <button class="theme-toggle" onclick="toggleTheme()">Toggle Mode</button>
+    </div>
+
+    <ul class="scan-list">
       <?php if (count($scans) > 0): ?>
         <?php foreach ($scans as $scan): ?>
           <li>
@@ -193,10 +82,28 @@ CitrusInsight AI
       <?php endif; ?>
     </ul>
   </div>
+
   <script>
-    document.querySelector(".logout-btn").addEventListener("click", ()=> {
-window.open("logout.php", "_self");
-});
+    let mode = "light";
+const themeToggle = document.querySelector(".theme-toggle");
+ document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("light");
+      themeToggle.innerHTML = "Dark Mode";
+    });
+  function toggleTheme() {
+if (mode === "light") {
+        document.body.classList.add("dark");
+        themeToggle.innerHTML = "Light Mode";
+        mode = "dark";
+      } else {
+        document.body.classList.remove("dark");
+        themeToggle.innerHTML = "Dark Mode";
+        mode = "light";
+      }
+    };
+     document.querySelector(".logout-btn")?.addEventListener("click", () => {
+    window.open("logout.php", "_self");
+  });
   </script>
 </body>
 </html>
