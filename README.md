@@ -71,22 +71,22 @@ CitrusInsightAI/
 ## 📸 Screenshots
 
 ### 🏠 Homepage
-![Homepage](./screenshots/homepage.png)
+![Homepage](./Screenshots/homepage.png)
 
 ### 🖼️ Scan Upload Interface
-![Upload](./screenshots/Image_upload_interface.png)
+![Upload](./Screenshots/Image_upload_interface.png)
 
 ### 📊 User Dashboard
-![Dashboard](./screenshots/user_dashboard.png)
+![Dashboard](./Screenshots/user_dashboard.png)
 
 ### 📄 Report
-![Report](./screenshots/report.png)
+![Report](./Screenshots/report.png)
 
 ### 🗂️ Scan History
-![Scan History](./screenshots/scan_history.png)
+![Scan History](./Screenshots/scan_history.png)
 
 ### 👤 User Profile
-![User Profile](./screenshots/user_profile.png)
+![User Profile](./Screenshots/user_profile.png)
 
 
 ---
