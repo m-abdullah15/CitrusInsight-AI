@@ -70,11 +70,24 @@ CitrusInsightAI/
 
 ## 📸 Screenshots
 
+### 🏠 Homepage
+![Homepage](./screenshots/homepage.png)
 
-* Homepage
-* Scan Upload Interface
-* User Dashboard
-* Scan Detail View
+### 🖼️ Scan Upload Interface
+![Upload](./screenshots/Image_upload_interface.png)
+
+### 📊 User Dashboard
+![Dashboard](./screenshots/user_dashboard.png)
+
+### 📄 Report
+![Report](./screenshots/report.png)
+
+### 🗂️ Scan History
+![Scan History](./screenshots/scan_history.png)
+
+### 👤 User Profile
+![User Profile](./screenshots/user_profile.png)
+
 
 ---
 
@@ -83,7 +96,7 @@ CitrusInsightAI/
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/yourusername/CitrusInsightAI.git
+   git clone https://github.com/m-abdullah-15/CitrusInsight-AI.git
    ```
 2. Start XAMPP and enable Apache & MySQL.
 3. Import `citrus_insight.sql` in phpMyAdmin.
