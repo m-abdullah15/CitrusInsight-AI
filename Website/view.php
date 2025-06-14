@@ -16,7 +16,7 @@ if (isset($_GET['report_id'])) {
 }
 
 $user_id = $_SESSION['user_id'];
-$path_addition = '../../'; // Path to add to the image path
+$path_addition = '../'; // Path to add to the image path
 // Fetch scan detail
 $sql = "SELECT * FROM disease_report WHERE report_id = ? AND user_id = ?";
 $stmt = $conn->prepare($sql);
