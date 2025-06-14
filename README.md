@@ -8,7 +8,7 @@ CitrusInsight AI is a full-stack, web-based intelligent system designed to detec
 
 * Web interface for citrus leaf disease detection
 * Trained CNN-based ML model supporting 10 disease classes
-* User authentication and role-based access
+* User authentication.
 * Personalized user dashboards
 * Scan history with timestamps and full image analysis
 * Dynamic solution display based on detected disease
@@ -18,7 +18,7 @@ CitrusInsight AI is a full-stack, web-based intelligent system designed to detec
 ## 🧑‍💻 Author
 
 **Muhammad Abdullah**
-Email: [abdjutt2482@gmail.com](mailto:abdjutt2482@gmail.com)
+Email: [m.abdullah.3042@gmail.com](mailto:m.abdullah3042@gmail.com)
 Location: Chiniot, Punjab, Pakistan
 
 ---
@@ -62,20 +62,14 @@ CitrusInsightAI/
 │   ├── dashboard/
 │   ├── scan_history/
 │   ├── view/
-├── dataset_info/        # Metadata or description about dataset
-├── screenshots/         # UI screenshots for README
-├── docs/                # Project documentation if any
+├── docs/           
 ├── README.md
-├── .gitignore
 ├── LICENSE
-└── requirements.txt     # If any Python code is included
+└── requirements.txt     
 ```
-
----
 
 ## 📸 Screenshots
 
-*Add screenshots showing:*
 
 * Homepage
 * Scan Upload Interface
