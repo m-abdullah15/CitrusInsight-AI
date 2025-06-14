@@ -17,7 +17,7 @@ if (!$user_id || !$model_name) {
 }
 
 // Image upload
-$target_dir = "../../uploads/";
+$target_dir = "../uploads/";
 $image_name = basename($_FILES["image"]["name"]);
 $target_file = $target_dir . time() . "_" . $image_name;
 
