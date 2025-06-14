@@ -2,6 +2,3 @@ tensorflow
 numpy
 pillow
 gradio
-flask
-FastAPI
-uvicorn
