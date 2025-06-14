@@ -153,7 +153,6 @@ CitrusInsight AI
 
     <div class="summary">
       <p><strong>Member Since:</strong> <?= $formatted_user_date ?></p>
-      <p><strong>Last Updated:</strong> May 5, 2025</p>
     </div>
 
     <div class="usage">
