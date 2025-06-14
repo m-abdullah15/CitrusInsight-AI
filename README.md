@@ -71,7 +71,7 @@ CitrusInsightAI/
 ## 📸 Screenshots
 
 ### 🏠 Homepage
-![Homepage](./Screenshots/homepage.png)
+![Homepage](./Screenshots/home_page.png)
 
 ### 🖼️ Scan Upload Interface
 ![Upload](./Screenshots/Image_upload_interface.png)
