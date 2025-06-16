@@ -48,7 +48,7 @@ Location: Chiniot, Punjab, Pakistan
 * **Frontend:** HTML, CSS, JavaScript
 * **Backend:** PHP
 * **Database:** MySQL (via XAMPP)
-* **Deployment:** Localhost (XAMPP), Model on Hugging Face (optional)
+* **Deployment:** Localhost (XAMPP), Model on Hugging Face
 
 ---
 
