@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2025 at 11:35 AM
+-- Generation Time: Nov 04, 2025 at 12:12 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -42,32 +42,8 @@ CREATE TABLE `disease_report` (
 --
 
 INSERT INTO `disease_report` (`report_id`, `user_id`, `model_name`, `prediction_result`, `confidence_score`, `time`, `image_path`) VALUES
-(23, 3, 'dense_net', 'Citrus greening', 46.72, '2025-05-16 12:45:54', 'uploads/1747399554_I.jpeg'),
-(24, 5, 'dense_net', 'Citrus greening', 95.45, '2025-05-16 16:02:23', 'uploads/1747411343_I3.jpeg'),
-(25, 5, 'dense_net', 'Spiny whitefly', 97.23, '2025-05-16 16:04:40', 'uploads/1747411480_I2.jpeg'),
-(26, 5, 'dense_net', 'Foliage damaged', 100, '2025-05-16 18:20:50', 'uploads/1747419650_I6.jpeg'),
-(27, 5, 'dense_net', 'Citrus canker', 69.1, '2025-05-17 05:08:41', 'uploads/1747458521_I5.jpeg'),
-(28, 5, 'dense_net', 'Citrus canker', 69.1, '2025-05-17 05:19:32', 'uploads/1747459172_I5.jpeg'),
-(29, 5, 'dense_net', 'Die back', 99.98, '2025-05-17 10:14:52', 'uploads/1747476892_I4.jpeg'),
-(30, 5, 'dense_net', 'Spiny whitefly', 97.23, '2025-05-17 16:32:54', 'uploads/1747499574_I2.jpeg'),
-(31, 5, 'dense_net', 'Spiny whitefly', 97.23, '2025-05-17 16:55:04', 'uploads/1747500904_I2.jpeg'),
-(32, 5, 'dense_net', 'Citrus canker', 69.1, '2025-05-17 18:08:02', 'uploads/1747505282_I5.jpeg'),
-(33, 5, 'dense_net', 'Citrus greening', 46.72, '2025-05-17 18:14:55', 'uploads/1747505695_I.jpeg'),
-(34, 5, 'dense_net', 'Citrus greening', 46.72, '2025-05-17 18:15:50', 'uploads/1747505750_I.jpeg'),
-(35, 5, 'dense_net', 'Citrus greening', 95.45, '2025-05-17 18:17:41', 'uploads/1747505861_I3.jpeg'),
-(36, 5, 'dense_net', 'Foliage damaged', 100, '2025-05-17 18:19:20', 'uploads/1747505960_I6.jpeg'),
-(37, 5, 'dense_net', 'Citrus greening', 46.72, '2025-05-17 18:19:29', 'uploads/1747505969_I.jpeg'),
-(38, 7, 'dense_net', 'Citrus greening', 46.72, '2025-05-17 18:38:12', 'uploads/1747507092_I.jpeg'),
-(39, 7, 'dense_net', 'Citrus canker', 69.1, '2025-05-17 18:55:20', 'uploads/1747508120_I5.jpeg'),
-(40, 7, 'dense_net', 'Die back', 99.98, '2025-05-17 19:10:53', 'uploads/1747509053_I4.jpeg'),
-(41, 5, 'dense_net', 'Citrus canker', 69.1, '2025-05-18 09:59:38', 'uploads/1747562378_I5.jpeg'),
-(42, 5, 'dense_net', 'Foliage damaged', 100, '2025-05-18 12:07:42', 'uploads/1747570062_I6.jpeg'),
-(43, 5, 'dense_net', 'Citrus canker', 99.39, '2025-05-18 15:06:07', 'uploads/1747580767_download.jpg'),
-(44, 5, 'dense_net', 'Die back', 100, '2025-05-18 18:00:16', 'uploads/1747591216_citrus_canker_1.jpg'),
-(45, 5, 'dense_net', 'Die back', 99.98, '2025-05-19 07:00:13', 'uploads/1747638013_I4.jpeg'),
-(46, 5, 'dense_net', 'Citrus greening', 95.45, '2025-05-19 07:04:20', 'uploads/1747638260_I3.jpeg'),
-(47, 5, 'dense_net', 'Citrus greening', 95.45, '2025-05-19 08:53:32', 'uploads/1747644812_I3.jpeg'),
-(48, 5, 'dense_net', 'Foliage damaged', 100, '2025-05-19 08:57:13', 'uploads/1747645033_I6.jpeg');
+(60, 5, 'dense_net', 'Citrus greening', 46.72, '2025-10-23 16:57:23', 'https://res.cloudinary.com/dnhy8zo1b/image/upload/v1761238643/citrus_disease_scans/1761238640_1747399554_I.png'),
+(61, 5, 'dense_net', 'Citrus greening', 46.72, '2025-10-24 11:36:47', 'https://res.cloudinary.com/dnhy8zo1b/image/upload/v1761305807/citrus_disease_scans/1761305797_1747399554_I.png');
 
 -- --------------------------------------------------------
 
@@ -192,7 +168,7 @@ ALTER TABLE `user_data`
 -- AUTO_INCREMENT for table `disease_report`
 --
 ALTER TABLE `disease_report`
-  MODIFY `report_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `report_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT for table `farm_data`
