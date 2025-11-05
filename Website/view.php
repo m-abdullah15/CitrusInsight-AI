@@ -16,7 +16,7 @@ if (isset($_GET['report_id'])) {
 }
 
 $user_id = $_SESSION['user_id'];
-$path_addition = '../'; // Path to add to the image path
+
 // Fetch scan detail
 $sql = "SELECT * FROM disease_report WHERE report_id = ? AND user_id = ?";
 $stmt = $conn->prepare($sql);
@@ -30,7 +30,10 @@ if ($result->num_rows === 0) {
 }
 
 $row = $result->fetch_assoc();
-$image_path = $path_addition.$row['image_path'];
+
+// ✅ Use Cloudinary URL directly (no local path)
+$image_path = $row['image_path']; 
+
 $confidence = $row['confidence_score'];
 $disease = $row['prediction_result'];
 $timestamp = date('d M Y, h:i A', strtotime($row['time']));
@@ -43,7 +46,7 @@ $timestamp = date('d M Y, h:i A', strtotime($row['time']));
   <title>Scan Details</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="./css/navbar.css"/>
-  <link rel="stylesheet" href="./css/view.css">
+  <link rel="stylesheet" href="./css/view.css?v=1">
 </head>
 <body>
   <nav>
@@ -79,7 +82,8 @@ CitrusInsight AI
     <div class="box">
       <h2>Image Scanned</h2>
       <div class="image-preview">
-        <img src="<?= htmlspecialchars($image_path) ?>" alt="Scanned Leaf" />
+        <!-- ✅ Now loads directly from Cloudinary URL -->
+        <img src="<?php echo htmlspecialchars($image_path) ?>" alt="Scanned Leaf" />
       </div>
       <div class="scan-another-btn">
   <a href="disease_detection.php">

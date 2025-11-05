@@ -45,6 +45,7 @@ CitrusInsight AI
 </div>
 </div>
 </nav>
+
   <div class="container">
     <div class="header-container">
       <div style="display: flex; align-items: center; gap: 12px;">
@@ -53,7 +54,6 @@ CitrusInsight AI
       </div>
     </div>
     <p class="description">Our advanced AI analyzes your Citrus Plant with 95.8% accuracy in seconds</p>
-
     <div class="upload-section">
       <div class="upload-header">
         <div>
@@ -67,7 +67,6 @@ CitrusInsight AI
           <input type="file" id="fileInput" accept="image/*" style="display: none;">
         </div>
       </div>
-
       <div class="drop-area">
         <div class="upload-icon">
           <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -86,121 +85,88 @@ CitrusInsight AI
     <p style="margin-top: 20px; font-size: 18px; color: #c084fc; font-weight: 600;">Analyzing Leaf... Please wait</p>
   </div>
 
-  <script>
-    let mode = "light";
-    let themeToggle = document.querySelector(".theme-toggle");
-    document.addEventListener("DOMContentLoaded", () => {
-      document.body.classList.add("light");
+  <script type="module">
+  import { Client } from "https://esm.sh/@gradio/client";
+
+  let mode = "light";
+  const themeToggle = document.querySelector(".theme-toggle");
+  const loader = document.getElementById("loaderOverlay");
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("light");
+    themeToggle.innerHTML = "Dark Mode";
+  });
+
+  function toggleTheme() {
+    if (mode === "light") {
+      document.body.classList.add("dark");
+      themeToggle.innerHTML = "Light Mode";
+      mode = "dark";
+    } else {
+      document.body.classList.remove("dark");
       themeToggle.innerHTML = "Dark Mode";
-    });
-    function toggleTheme() {
-      if (mode === "light") {
-        document.body.classList.add("dark");
-        themeToggle.innerHTML = "Light Mode";
-        mode = "dark";
+      mode = "light";
+    }
+  }
+  window.toggleTheme = toggleTheme;
+
+  const captureButton = document.getElementById("captureButton");
+  const selectButton = document.getElementById("selectButton");
+  const fileInput = document.getElementById("fileInput");
+  const cameraInput = document.getElementById("cameraInput");
+
+  captureButton.onclick = () => cameraInput.click();
+  selectButton.onclick = () => fileInput.click();
+  document.querySelector(".browse-btn").onclick = () => fileInput.click();
+
+  // --- ✅ Connect to Hugging Face once globally ---
+  const client = await Client.connect("https://abdjutt777-citrus-demo.hf.space/");
+
+  // --- handle file input changes ---
+  [fileInput, cameraInput].forEach(input =>
+    input.addEventListener("change", predictDisease)
+  );
+
+  async function predictDisease() {
+    const file = fileInput.files[0] || cameraInput.files[0];
+    if (!file) return alert("Please select an image!");
+
+    loader.style.display = "flex";
+
+    try {
+      // --- send directly, no FileReader needed ---
+      const result = await client.predict("/predict", { image: file });
+      const predictedClass = result.data[0];
+      const Confidence = parseFloat(result.data[1]);
+
+      const formData = new FormData();
+      formData.append("predicted_class", predictedClass);
+      formData.append("confidence_score", Confidence);
+      formData.append("image", file);
+
+      // 🔹 Show upload message while saving to Cloudinary
+      const loaderText = loader.querySelector("p");
+      loaderText.textContent = " Saving Image to Cloudinary... Please wait";
+
+      const res = await fetch("save_disease_result.php", { method: "POST", body: formData });
+      const data = await res.json();
+
+      // Restore text back after upload
+      loaderText.textContent = "Analyzing Leaf... Please wait";
+
+      if (data.status === "success") {
+        loader.style.opacity = "0";
+        setTimeout(() => (window.location.href = "view.php"), 500);
       } else {
-        document.body.classList.remove("dark");
-        themeToggle.innerHTML = "Dark Mode";
-        mode = "light";
+        console.error("Failed to save:", data.message);
       }
+    } catch (err) {
+      console.error("Error:", err);
+      alert("⚠️ Prediction failed!");
+    } finally {
+      loader.style.display = "none";
     }
-
-    document.getElementById("captureButton").addEventListener("click", () => {
-      document.getElementById("cameraInput").click();
-    });
-
-    document.getElementById("selectButton").addEventListener("click", () => {
-      document.getElementById("fileInput").click();
-    });
-
-    document.querySelector(".browse-btn").addEventListener("click", () => {
-      document.getElementById("fileInput").click();
-    });
-
-    document.getElementById("fileInput").addEventListener("change", () => {
-      predictDisease();
-    });
-
-    document.getElementById("cameraInput").addEventListener("change", () => {
-      predictDisease();
-    });
-
-    const dropArea = document.querySelector(".drop-area");
-    dropArea.addEventListener("dragover", (e) => {
-      e.preventDefault();
-      dropArea.style.backgroundColor = "#dbeafe";
-    });
-
-    dropArea.addEventListener("dragleave", () => {
-      dropArea.style.backgroundColor = "var(--drop-bg)";
-    });
-
-    dropArea.addEventListener("drop", (e) => {
-      e.preventDefault();
-      const files = e.dataTransfer.files;
-      if (files.length > 0) {
-        document.getElementById("fileInput").files = files;
-        predictDisease();
-      }
-    });
-
-    async function predictDisease() {
-      const fileInput = document.getElementById("fileInput").files[0] || document.getElementById("cameraInput").files[0];
-      if (!fileInput) {
-        alert("Please select an image!");
-        return;
-      }
-      const loader = document.getElementById("loaderOverlay");
-      loader.style.display = "flex";
-      loader.style.opacity = "1";
-
-      let reader = new FileReader();
-      reader.readAsDataURL(fileInput);
-      reader.onload = async function () {
-        try {
-          const { Client } = await import("https://esm.sh/@gradio/client");
-          const client = await Client.connect("https://abdjutt777-citrus-demo.hf.space/");
-          const result = await client.predict("/predict", { image: fileInput });
-
-          const predictedClass = result.data[0];
-          const Confidence = parseFloat(result.data[1]);
-
-          const formData = new FormData();
-          formData.append('predicted_class', predictedClass);
-          formData.append('confidence_score', Confidence);
-          formData.append('image', fileInput);
-
-          fetch('save_disease_result.php', {
-            method: 'POST',
-            body: formData
-          })
-            .then(response => response.text())
-            .then(raw => {
-              try {
-                const data = JSON.parse(raw);
-                if (data.status === "success") {
-                  setTimeout(() => {
-                    loader.style.opacity = "0";
-                    setTimeout(() => {
-                      window.location.href = "view.php";
-                    }, 500);
-                  }, 800);
-                } else {
-                  console.error("Failed to save report:", data.message);
-                }
-              } catch (e) {
-                console.error("Error parsing JSON:", e, raw);
-              }
-            })
-            .catch(error => console.error("Fetch error:", error));
-
-        } catch (error) {
-          console.error("Prediction error:", error);
-          alert("\u26A0\uFE0F Error in prediction!");
-          loader.style.display = "none";
-        }
-      };
-    }
+  }
   </script>
 </body>
 </html>

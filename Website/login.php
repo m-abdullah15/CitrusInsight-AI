@@ -29,7 +29,7 @@ if(isset($_POST['signin'])){
     $_SESSION['user_date']=$user_date;
 
         if($password == $pass){ 
-            echo "<script>alert('Welcome, " . addslashes($name) . "');</script>";
+            
             echo "<script>window.open('disease_detection.php','_self')</script>";
         } else {
             echo "<script>alert('Incorrect Password or username')</script>";
