@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #fef7e6;
+  --color-primary-100: #fdecc0;
+  --color-primary-200: #fce096;
+  --color-primary-300: #fbd46c;
+  --color-primary-400: #faca4d;
+  --color-primary-500: #f9c02e;
+  --color-primary-600: #f8ba29;
+  --color-primary-700: #f7b223;
+  --color-primary-800: #f6aa1d;
+  --color-primary-900: #f59c12;
+
+  --color-secondary-50: #e8f5e9;
+  --color-secondary-100: #c8e6c9;
+  --color-secondary-200: #a5d6a7;
+  --color-secondary-300: #81c784;
+  --color-secondary-400: #66bb6a;
+  --color-secondary-500: #4caf50;
+  --color-secondary-600: #43a047;
+  --color-secondary-700: #388e3c;
+  --color-secondary-800: #2e7d32;
+  --color-secondary-900: #1b5e20;
+
+  --color-accent-50: #fff3e0;
+  --color-accent-100: #ffe0b2;
+  --color-accent-200: #ffcc80;
+  --color-accent-300: #ffb74d;
+  --color-accent-400: #ffa726;
+  --color-accent-500: #ff9800;
+  --color-accent-600: #fb8c00;
+  --color-accent-700: #f57c00;
+  --color-accent-800: #ef6c00;
+  --color-accent-900: #e65100;
+}
+
+@layer utilities {
+  @keyframes scale-in {
+    0% {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes blob {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    25% {
+      transform: translate(20px, -50px) scale(1.1);
+    }
+    50% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    75% {
+      transform: translate(50px, 50px) scale(1.05);
+    }
+  }
+
+  @keyframes fade-in-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounce-slow {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.2s ease-out;
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animate-fade-in-down {
+    animation: fade-in-down 0.6s ease-out;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out;
+    animation-fill-mode: both;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 3s ease-in-out infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
